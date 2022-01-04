@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sedaya">
-        <activity
-            android:name=".activity.MainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main" />
+<!--        <activity-->
+<!--            android:name=".activity.MainActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_main" />-->
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -22,6 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.BaruActivity" />
     </application>
 
 </manifest>
