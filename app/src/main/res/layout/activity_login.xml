@@ -16,30 +16,30 @@
         <TextView
             android:id="@+id/tulisan"
             android:textColor="@color/colorPrimary"
-            android:textSize="16dp"
+            android:textSize="@dimen/_12ssp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Selamat datang di"/>
 
         <TextView
             android:textColor="@color/colorPrimary"
-            android:textSize="28dp"
+            android:textSize="@dimen/_23ssp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sedaya"/>
 
         <ImageView
-            android:layout_marginTop="15dp"
-            android:layout_width="190dp"
-            android:layout_height="190dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_width="@dimen/_190sdp"
+            android:layout_height="@dimen/_150sdp"
             android:src="@drawable/sedayalogokotak"/>
 
         <Button
             android:id="@+id/btn_prosesLogin"
             android:background="@drawable/bg_btn_login1"
-            android:layout_marginTop="25dp"
-            android:layout_width="170dp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_width="@dimen/_130sdp"
             android:textColor="@color/white"
             android:layout_height="40dp"
             android:text="Masuk"/>
@@ -48,9 +48,9 @@
             android:id="@+id/btn_register"
             android:textColor="@color/white"
             android:background="@drawable/bg_btn_login2"
-            android:layout_marginTop="10dp"
-            android:layout_width="170dp"
-            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_30sdp"
             android:text="Daftar"/>
 
     </LinearLayout>
