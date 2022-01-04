@@ -1,0 +1,71 @@
+package com.app.sedaya.activity
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.app.sedaya.R
+import com.app.sedaya.app.ApiConfig
+import com.app.sedaya.databinding.ActivityMasukBinding
+import com.app.sedaya.databinding.ActivityRegisterBinding
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
+class RegisterActivity : AppCompatActivity() {
+
+    private var _binding: ActivityRegisterBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        _binding = ActivityRegisterBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
+        binding.btnRegister.setOnClickListener {
+            register()
+        }
+
+    }
+
+    fun register() {
+        if (binding.edtNama.text.isEmpty()) {
+            binding.edtNama.error="Kolom nama tidak boleh kosong"
+            binding.edtNama.requestFocus()
+            return
+        } else if (binding.edtEmail.text.isEmpty()) {
+            binding.edtEmail.error="Kolom email tidak boleh kosong"
+            binding.edtEmail.requestFocus()
+            return
+        } else if (binding.edtTelp.text.isEmpty()) {
+            binding.edtTelp.error="Kolom no.handphone tidak boleh kosong"
+            binding.edtTelp.requestFocus()
+            return
+        } else if (binding.edtAlamat.text.isEmpty()) {
+            binding.edtAlamat.error="Kolom alamat tidak boleh kosong"
+            binding.edtAlamat.requestFocus()
+            return
+        } else if (binding.edtPassword.text.isEmpty()) {
+            binding.edtPassword.error = "Kolom password tidak boleh kosong"
+            binding.edtPassword.requestFocus()
+            return
+        }
+
+        ApiConfig.instanceRetrofit.register(
+            binding.edtNama.text.toString(),
+            binding.edtEmail.text.toString(),
+            binding.edtTelp.text.toString(),
+            binding.edtAlamat.text.toString(),
+            binding.edtPassword.text.toString()
+        ).enqueue(object : Callback<ResponseBody>{
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                //handle ketika gagal
+            }
+
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                //handle ketika sukses
+            }
+        })
+
+    }
+}

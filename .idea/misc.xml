@@ -5,10 +5,13 @@
       <map>
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/drawable/bg_btn_login1.xml" value="0.2203125" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/drawable/bg_btn_login2.xml" value="0.2203125" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/drawable/cursor_color.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_baru.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_main2.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_masuk.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_register.xml" value="0.30833333333333335" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/fragment_akun.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/fragment_home.xml" value="0.23980222496909764" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/fragment_home2.xml" value="0.20416666666666666" />

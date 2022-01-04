@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.app.sedaya.activity.LoginActivity
+import com.app.sedaya.activity.MasukActivity
 import com.app.sedaya.fragment.AkunFragment
 import com.app.sedaya.fragment.HomeFragment
 import com.app.sedaya.fragment.KeranjangFragment
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     if (sP.getStatusLogin()) {
                         callFragment(2, framentAkun)
                     } else {
-                        startActivity(Intent(this, LoginActivity::class.java))
+                        startActivity(Intent(this, MasukActivity::class.java))
                     }
                 }
             }
