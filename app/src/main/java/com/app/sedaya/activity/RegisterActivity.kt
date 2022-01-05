@@ -1,11 +1,13 @@
 package com.app.sedaya.activity
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.sedaya.R
 import com.app.sedaya.app.ApiConfig
 import com.app.sedaya.databinding.ActivityMasukBinding
 import com.app.sedaya.databinding.ActivityRegisterBinding
+import com.app.sedaya.model.ResponModel
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -57,15 +59,22 @@ class RegisterActivity : AppCompatActivity() {
             binding.edtTelp.text.toString(),
             binding.edtAlamat.text.toString(),
             binding.edtPassword.text.toString()
-        ).enqueue(object : Callback<ResponseBody>{
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+        ).enqueue(object : Callback<ResponModel>{
+            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
                 //handle ketika gagal
+                Toast.makeText(this@RegisterActivity,"Error:"+t.message, Toast.LENGTH_SHORT).show()
             }
 
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                //handle ketika sukses
+            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+
+                val respon = response.body()!!
+
+                if (respon.code == 200) {
+                    Toast.makeText(this@RegisterActivity,"Selamat datang "+respon.data.nama, Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@RegisterActivity,"Error:"+respon.message, Toast.LENGTH_SHORT).show()
+                }
             }
         })
-
     }
 }
