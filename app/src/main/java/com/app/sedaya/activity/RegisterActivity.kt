@@ -1,12 +1,16 @@
 package com.app.sedaya.activity
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.app.sedaya.MainActivity
 import com.app.sedaya.R
 import com.app.sedaya.app.ApiConfig
 import com.app.sedaya.databinding.ActivityMasukBinding
 import com.app.sedaya.databinding.ActivityRegisterBinding
+import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.ResponModel
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -18,11 +22,15 @@ class RegisterActivity : AppCompatActivity() {
     private var _binding: ActivityRegisterBinding? = null
     private val binding get() = _binding!!
 
+    lateinit var sP: SharedPref
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityRegisterBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        sP = SharedPref(this)
 
         binding.btnRegister.setOnClickListener {
             register()
@@ -53,6 +61,7 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
+        binding.pb.visibility = View.VISIBLE
         ApiConfig.instanceRetrofit.register(
             binding.edtNama.text.toString(),
             binding.edtEmail.text.toString(),
@@ -61,18 +70,23 @@ class RegisterActivity : AppCompatActivity() {
             binding.edtPassword.text.toString()
         ).enqueue(object : Callback<ResponModel>{
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+                binding.pb.visibility = View.GONE
                 //handle ketika gagal
-                Toast.makeText(this@RegisterActivity,"Error:"+t.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@RegisterActivity,"Error : "+t.message, Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-
+                binding.pb.visibility = View.GONE
                 val respon = response.body()!!
-
                 if (respon.code == 200) {
+                    sP.setStatusLogin(true)
+                    val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    finish()
                     Toast.makeText(this@RegisterActivity,"Selamat datang "+respon.data.nama, Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this@RegisterActivity,"Error:"+respon.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity,"Error : "+respon.message, Toast.LENGTH_SHORT).show()
                 }
             }
         })

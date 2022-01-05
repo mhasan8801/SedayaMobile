@@ -1,7 +1,6 @@
 package com.app.sedaya.app
 
 import com.app.sedaya.model.ResponModel
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -18,4 +17,12 @@ interface ApiService {
             @Field("alamat") alamat :String,
             @Field("password") password :String
     ):Call<ResponModel>
+
+    @FormUrlEncoded
+    @POST("login.php") //http://ws-tif.com/j-art/API/register
+    fun login(
+        @Field("email") email :String,
+        @Field("password") password :String
+    ):Call<ResponModel>
+
 }
