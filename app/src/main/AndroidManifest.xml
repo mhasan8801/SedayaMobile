@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.sedaya">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -27,6 +28,7 @@
         <activity android:name=".activity.BaruActivity" />
         <activity android:name=".activity.MasukActivity" />
         <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.UpdateProfileActivity" />
     </application>
 
 </manifest>

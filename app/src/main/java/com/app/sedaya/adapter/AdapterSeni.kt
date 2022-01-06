@@ -30,6 +30,6 @@ class AdapterSeni (var data: ArrayList<Seni>) : RecyclerView.Adapter<AdapterSeni
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.tvJudul.text = data[position].judul
         holder.tvHarga.text = data[position].harga
-        holder.imgSeni.setImageResource(data[position].image)
+//        holder.imgSeni.setImageResource(data[position].image)
     }
 }

@@ -228,6 +228,7 @@
             android:background="@drawable/blue_fill__rounded_color"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
+            android:onClick="coba()"
             android:paddingTop="@dimen/_10sdp"
             android:paddingBottom="@dimen/_10sdp"
             android:text="Update Profile"

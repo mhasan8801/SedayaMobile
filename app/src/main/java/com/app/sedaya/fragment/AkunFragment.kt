@@ -11,11 +11,16 @@ import android.widget.TextView
 import com.app.sedaya.MainActivity
 import com.app.sedaya.R
 import com.app.sedaya.activity.LoginActivity
+import com.app.sedaya.activity.UpdateProfileActivity
+import com.app.sedaya.databinding.ActivityLoginBinding
 import com.app.sedaya.databinding.FragmentAkunBinding
 import com.app.sedaya.helper.SharedPref
 
 
 class AkunFragment : Fragment() {
+
+    private var _binding: FragmentAkunBinding? = null
+    private val binding get() = _binding!!
 
     lateinit var sP:SharedPref
     lateinit var btnLogout:TextView
@@ -29,18 +34,28 @@ class AkunFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        _binding = FragmentAkunBinding.inflate(layoutInflater)
+
         // Inflate the layout for this fragment
         val view : View = inflater.inflate(R.layout.fragment_akun, container, false)
         init(view)
 
+
         sP = SharedPref(requireActivity())
 
-        btnLogout.setOnClickListener {
+        mainButton()
+        setData()
+        return view
+    }
+    private fun mainButton() {
+        binding.btnLogout.setOnClickListener {
             sP.setStatusLogin(false)
         }
 
-        setData()
-        return view
+        binding.btnUpdate.setOnClickListener {
+//            startActivity(Intent(requireActivity(), UpdateProfileActivity::class.java))
+        }
     }
 
     fun String?.getInitial(): String {
@@ -65,8 +80,6 @@ class AkunFragment : Fragment() {
         tvTelp.text = user.telp
         tvAlamat.text = user.alamat
         tvInisial.text = user.nama.getInitial()
-
-
     }
 
     private fun init(view: View) {
