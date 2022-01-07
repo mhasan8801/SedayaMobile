@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_home, container, false)
         init(view)
         getSeni()
-
+        displaySeni()
         return view
     }
 
@@ -78,7 +78,7 @@ class HomeFragment : Fragment() {
 
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                 val res = response.body()!!
-                if (res.success == 1) {
+                if (res.code == 200) {
                     listSeni = res.seni
                     displaySeni()
                 }
