@@ -10,7 +10,7 @@ import retrofit2.http.POST
 interface ApiService {
 
     @FormUrlEncoded
-    @POST("register.php") //http://ws-tif.com/j-art/API/register
+    @POST("register.php") //http://ws-tif.com/sedaya/API/register
     fun register(
             @Field("nama") nama :String,
             @Field("email") email :String,
