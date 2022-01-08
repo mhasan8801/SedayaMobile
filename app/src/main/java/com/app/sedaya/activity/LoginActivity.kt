@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.app.sedaya.MainActivity
 import com.app.sedaya.app.ApiConfig
 import com.app.sedaya.databinding.ActivityLoginBinding
+import com.app.sedaya.databinding.ActivityRegisterBinding
 import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.ResponModel
 import retrofit2.Call
@@ -32,6 +33,7 @@ class LoginActivity : AppCompatActivity() {
         binding.btnMasuk.setOnClickListener {
             login()
         }
+
     }
 
     fun login() {
@@ -66,6 +68,7 @@ class LoginActivity : AppCompatActivity() {
 //                    sP.setString(sP.email, respon.data.email)
 //                    sP.setString(sP.telp, respon.data.telp)
 //                    sP.setString(sP.alamat, respon.data.alamat)
+
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)

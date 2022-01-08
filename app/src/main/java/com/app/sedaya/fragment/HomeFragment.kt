@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_home, container, false)
         init(view)
         getSeni()
-
+        displaySeni()
         return view
     }
 
@@ -59,13 +59,13 @@ class HomeFragment : Fragment() {
         val layoutManager3 = LinearLayoutManager(activity)
         layoutManager3.orientation = LinearLayoutManager.HORIZONTAL
 
-        rvSeni.adapter = AdapterSeni(listSeni)
+        rvSeni.adapter = AdapterSeni(requireActivity(), listSeni)
         rvSeni.layoutManager = layoutManager
 
-        rvElektronik.adapter = AdapterSeni(listSeni)
+        rvElektronik.adapter = AdapterSeni(requireActivity(), listSeni)
         rvElektronik.layoutManager = layoutManager2
 
-        rvProdukTerlasir.adapter = AdapterSeni(listSeni)
+        rvProdukTerlasir.adapter = AdapterSeni(requireActivity(), listSeni)
         rvProdukTerlasir.layoutManager = layoutManager3
     }
 
@@ -78,7 +78,7 @@ class HomeFragment : Fragment() {
 
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                 val res = response.body()!!
-                if (res.success == 1) {
+                if (res.code == 200) {
                     listSeni = res.seni
                     displaySeni()
                 }

@@ -48,14 +48,12 @@ class AkunFragment : Fragment() {
         setData()
         return view
     }
+
     private fun mainButton() {
         binding.btnLogout.setOnClickListener {
             sP.setStatusLogin(false)
         }
 
-        binding.btnUpdate.setOnClickListener {
-//            startActivity(Intent(requireActivity(), UpdateProfileActivity::class.java))
-        }
     }
 
     fun String?.getInitial(): String {

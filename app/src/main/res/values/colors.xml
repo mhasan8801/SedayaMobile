@@ -11,6 +11,8 @@
     <color name="colorPrimary">@color/colorPrimary_800</color>
     <color name="colorPrimaryVariant">@color/colorPrimary_800</color>
     <color name="colorOnPrimary">@color/white</color>
+    <color name="colorPrimaryDark">#001342</color>
+    <color name="dark">#121931</color>
 
     <color name="colorPrimary_700">#3CB29A</color>
     <color name="colorPrimary_800">#266D98</color>
