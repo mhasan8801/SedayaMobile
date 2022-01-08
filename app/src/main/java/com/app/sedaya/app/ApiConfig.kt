@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiConfig {
 
-    private const val BASE_URL = "http://ws-tif.com/sedaya/API/"
+    private const val BASE_URL = "http://ws-tif.com/j-art/API/"
     private val client: Retrofit
         get() {
             val gson = GsonBuilder()
