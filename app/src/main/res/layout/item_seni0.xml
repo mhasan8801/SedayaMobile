@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="@dimen/_110sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_15sdp"
+    android:layout_marginVertical="@dimen/_2sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_seni"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/loadingseni"/>
+
+        <TextView
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:id="@+id/tv_judul"
+            android:lines="2"
+            android:maxLines="2"
+            android:ellipsize="marquee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama Produk"/>
+
+<!--        <TextView-->
+<!--            android:textColor="#8F8F8F"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:textSize="16dp"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:id="@+id/tv_hargaAsli"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Rp.0"/>-->
+
+        <TextView
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_7ssp"
+            android:layout_marginBottom="@dimen/_10ssp"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginHorizontal="@dimen/_5ssp"
+            android:id="@+id/tv_harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp.0"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

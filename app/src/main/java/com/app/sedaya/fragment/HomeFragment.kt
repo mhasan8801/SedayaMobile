@@ -1,16 +1,13 @@
 package com.app.sedaya.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
-import com.app.sedaya.MainActivity
 import com.app.sedaya.R
 import com.app.sedaya.adapter.AdapterSeni
 import com.app.sedaya.adapter.AdapterSlider
@@ -26,8 +23,8 @@ class HomeFragment : Fragment() {
 
     lateinit var vpSlider : ViewPager
     lateinit var rvSeni: RecyclerView
-    lateinit var rvProdukTerlasir: RecyclerView
-    lateinit var rvElektronik: RecyclerView
+//    lateinit var rvProdukTerlasir: RecyclerView
+//    lateinit var rvElektronik: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,11 +59,11 @@ class HomeFragment : Fragment() {
         rvSeni.adapter = AdapterSeni(requireActivity(), listSeni)
         rvSeni.layoutManager = layoutManager
 
-        rvElektronik.adapter = AdapterSeni(requireActivity(), listSeni)
-        rvElektronik.layoutManager = layoutManager2
+//        rvElektronik.adapter = AdapterSeni(requireActivity(), listSeni)
+//        rvElektronik.layoutManager = layoutManager2
 
-        rvProdukTerlasir.adapter = AdapterSeni(requireActivity(), listSeni)
-        rvProdukTerlasir.layoutManager = layoutManager3
+//        rvProdukTerlasir.adapter = AdapterSeni(requireActivity(), listSeni)
+//        rvProdukTerlasir.layoutManager = layoutManager3
     }
 
     private var listSeni: ArrayList<Seni> = ArrayList()
@@ -89,8 +86,8 @@ class HomeFragment : Fragment() {
     fun init(view: View) {
         vpSlider = view.findViewById(R.id.vp_slider)
         rvSeni = view.findViewById(R.id.rv_seni)
-        rvElektronik = view.findViewById(R.id.rv_elektronik)
-        rvProdukTerlasir = view.findViewById(R.id.rv_produkTerlasir)
+//        rvElektronik = view.findViewById(R.id.rv_elektronik)
+//        rvProdukTerlasir = view.findViewById(R.id.rv_produkTerlasir)
     }
 
 //        val arrSeni: ArrayList<Seni>get(){

@@ -8,241 +8,257 @@
     tools:context=".MainActivity">
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <FrameLayout
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_203sdp"
-            android:background="@drawable/top_background">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/_120sdp"
-                android:layout_height="@dimen/_120sdp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_30sdp"
-                app:cardCornerRadius="@dimen/_60sdp">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_203sdp"
+                android:background="@drawable/top_background">
 
-                <RelativeLayout
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_60sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_inisial"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimary"
+                            android:gravity="center"
+                            android:text="MH"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_50sdp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/image_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:scaleType="centerCrop" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_153sdp"
+                    android:text="Muham Hasan"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/_23sdp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
+                android:background="@drawable/white_background"
+                android:orientation="vertical">
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tv_inisial"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorPrimary"
-                        android:gravity="center"
-                        android:text="MH"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_50sdp"
+                        android:id="@+id/txt_Email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Email:"
+                        android:textColor="@color/colorPrimary_800"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="mhasan@gmail.com"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#5b5b5b"
+                        android:textSize="@dimen/_14sdp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_margin="@dimen/_6sdp"
+                    android:alpha="0.5"
+                    android:background="#585858" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_Phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Handphone:"
+                        android:textColor="@color/colorPrimary_800"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="082232111333"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#5b5b5b"
+                        android:textSize="@dimen/_14sdp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:alpha="0.5"
+                    android:background="#585858" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_Alamat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Alamat:"
+                        android:textColor="@color/colorPrimary_800"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_alamat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Probolinggo"
+                        android:maxLines="2"
+                        android:textColor="#5b5b5b"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_margin="@dimen/_6sdp"
+                    android:alpha="0.5"
+                    android:background="#585858" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8ssp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_Password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Password:"
+                        android:textColor="@color/colorPrimary_800"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <TextView
+                        android:id="@+id/txt_UbahPw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ubah"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#5b5b5b"
+                        android:textSize="@dimen/_14sdp"
                         android:textStyle="bold" />
+                </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/image_profile"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        android:scaleType="centerCrop"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_margin="@dimen/_6sdp"
+                    android:alpha="0.5"
+                    android:background="#585858" />
 
-                </RelativeLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
 
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_40sdp"
+                android:background="@drawable/blue_fill__rounded_color"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="Update Profile"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:id="@+id/btn_logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_153sdp"
-                android:text="Muham Hasan"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/_23sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Logout"
                 android:textStyle="bold" />
-
-        </FrameLayout>
-
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_18sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_18sdp"
-            android:background="@drawable/white_background"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/_8sdp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_Email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Email:"
-                    android:textColor="@color/colorPrimary_800"
-                    android:textSize="@dimen/_14sdp" />
-
-                <TextView
-                    android:id="@+id/tv_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="mhasan@gmail.com"
-                    android:textAlignment="viewEnd"
-                    android:textColor="#5b5b5b"
-                    android:textSize="@dimen/_14sdp" />
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/appCompatImageView"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_margin="@dimen/_6sdp"
-                android:alpha="0.5"
-                android:background="#585858" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/_8sdp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_Phone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Handphone:"
-                    android:textColor="@color/colorPrimary_800"
-                    android:textSize="@dimen/_14sdp" />
-
-                <TextView
-                    android:id="@+id/tv_phone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="082232111333"
-                    android:textAlignment="viewEnd"
-                    android:textColor="#5b5b5b"
-                    android:textSize="@dimen/_14sdp" />
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/appCompatImageView3"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_margin="10dp"
-                android:alpha="0.5"
-                android:background="#585858" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_Alamat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Alamat:"
-                    android:textColor="@color/colorPrimary_800"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/tv_alamat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Probolinggo"
-                    android:textAlignment="viewEnd"
-                    android:textColor="#5b5b5b"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/appCompatImageView2"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_margin="@dimen/_6sdp"
-                android:alpha="0.5"
-                android:background="#585858" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/_8ssp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_Password"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Password:"
-                    android:textColor="@color/colorPrimary_800"
-                    android:textSize="@dimen/_14sdp" />
-
-                <TextView
-                    android:id="@+id/txt_UbahPw"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Ubah"
-                    android:textAlignment="viewEnd"
-                    android:textColor="#5b5b5b"
-                    android:textSize="@dimen/_14sdp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_margin="@dimen/_6sdp"
-                android:alpha="0.5"
-                android:background="#585858" />
-
 
         </LinearLayout>
 
+    </androidx.core.widget.NestedScrollView>
 
-        <TextView
-            android:id="@+id/btn_update"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_40sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginRight="@dimen/_40sdp"
-            android:background="@drawable/blue_fill__rounded_color"
-            android:fontFamily="@font/poppins_medium"
-            android:gravity="center"
-            android:onClick="coba()"
-            android:paddingTop="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_10sdp"
-            android:text="Update Profile"
-            android:textColor="#ffffff"
-            android:textSize="@dimen/_13sdp" />
 
-        <TextView
-            android:id="@+id/btn_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="Logout"
-            android:textStyle="bold" />
 
 
     </LinearLayout>

@@ -8,13 +8,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.app.sedaya.MainActivity
 import com.app.sedaya.R
+import com.app.sedaya.activity.DetailSeniActivity
 import com.app.sedaya.activity.LoginActivity
 import com.app.sedaya.activity.UpdateProfileActivity
 import com.app.sedaya.databinding.ActivityLoginBinding
 import com.app.sedaya.databinding.FragmentAkunBinding
 import com.app.sedaya.helper.SharedPref
+import com.app.sedaya.model.Seni
+import com.google.gson.Gson
+import kotlinx.coroutines.Dispatchers.Main
 
 
 class AkunFragment : Fragment() {
@@ -24,6 +29,7 @@ class AkunFragment : Fragment() {
 
     lateinit var sP:SharedPref
     lateinit var btnLogout:TextView
+    lateinit var btnUpdate:TextView
     lateinit var tvNama:TextView
     lateinit var tvEmail:TextView
     lateinit var tvTelp:TextView
@@ -41,7 +47,6 @@ class AkunFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_akun, container, false)
         init(view)
 
-
         sP = SharedPref(requireActivity())
 
         mainButton()
@@ -50,8 +55,11 @@ class AkunFragment : Fragment() {
     }
 
     private fun mainButton() {
-        binding.btnLogout.setOnClickListener {
+        btnLogout.setOnClickListener {
             sP.setStatusLogin(false)
+        }
+        btnUpdate.setOnClickListener {
+            startActivity(Intent(requireContext(), UpdateProfileActivity::class.java))
         }
 
     }
@@ -82,6 +90,7 @@ class AkunFragment : Fragment() {
 
     private fun init(view: View) {
         btnLogout = view.findViewById(R.id.btn_logout)
+        btnUpdate = view.findViewById(R.id.btn_update)
         tvNama = view.findViewById(R.id.tv_name)
         tvEmail = view.findViewById(R.id.tv_email)
         tvTelp = view.findViewById(R.id.tv_phone)

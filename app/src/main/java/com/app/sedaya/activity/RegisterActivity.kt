@@ -36,6 +36,10 @@ class RegisterActivity : AppCompatActivity() {
             register()
         }
 
+        binding.btnKliksini.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
     }
 
     fun register() {

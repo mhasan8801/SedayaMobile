@@ -31,6 +31,10 @@ class UpdateProfileActivity : AppCompatActivity() {
         _binding = ActivityUpdateProfileBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+        supportActionBar!!.title = "Update Akun"
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         sP = SharedPref(this)
 
@@ -111,5 +115,10 @@ class UpdateProfileActivity : AppCompatActivity() {
 //                }
 //            }
 //        })
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 }

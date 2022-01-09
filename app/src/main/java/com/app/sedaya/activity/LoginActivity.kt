@@ -34,6 +34,10 @@ class LoginActivity : AppCompatActivity() {
             login()
         }
 
+        binding.btnDaftar.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
     }
 
     fun login() {

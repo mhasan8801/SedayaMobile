@@ -20,14 +20,14 @@ interface ApiService {
     ):Call<ResponModel>
 
     @FormUrlEncoded
-    @POST("login.php") //http://ws-tif.com/j-art/API/register
+    @POST("login.php")
     fun login(
         @Field("email") email :String,
         @Field("password") password :String
     ):Call<ResponModel>
 
     @FormUrlEncoded
-    @POST("update-profile.php") //http://ws-tif.com/j-art/API/register
+    @POST("update-profile.php")
     fun updateProfile(
         @Field("usr_id") usr_id : Int,
         @Field("nama") nama :String,
@@ -38,5 +38,15 @@ interface ApiService {
 
     @GET("seni.php")
     fun getSeni(): Call<ResponModel>
+
+    @FormUrlEncoded
+    @POST("update-profile.php")
+    fun updateAkun(
+        @Field("usr_id") id :Int,
+        @Field("nama") nama :String? = null,
+        @Field("email") email :String? = null,
+        @Field("telp") telp :String? = null,
+        @Field("alamat") alamat :String? = null,
+    ):Call<ResponModel>
 
 }

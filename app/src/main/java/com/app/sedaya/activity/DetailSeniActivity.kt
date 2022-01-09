@@ -43,7 +43,7 @@ class DetailSeniActivity : AppCompatActivity() {
             .load(gambar)
             .placeholder(R.drawable.loadingseni)
             .error(R.drawable.loadingseni)
-//            .resize(1000,600)
+//            .resize(400,400)
             .into(binding.image)
 
         //Set toolbar
