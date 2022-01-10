@@ -5,15 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.app.sedaya.R
+import com.app.sedaya.adapter.AdapterRekomSeni
 import com.app.sedaya.adapter.AdapterSeni
 import com.app.sedaya.adapter.AdapterSlider
 import com.app.sedaya.app.ApiConfig
+import com.app.sedaya.databinding.FragmentAkunBinding
+import com.app.sedaya.databinding.FragmentHomeBinding
 import com.app.sedaya.model.ResponModel
 import com.app.sedaya.model.Seni
+import com.google.android.material.card.MaterialCardView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,8 +27,15 @@ import retrofit2.Response
 
 class HomeFragment : Fragment() {
 
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
     lateinit var vpSlider : ViewPager
     lateinit var rvSeni: RecyclerView
+    lateinit var rvSeniRekom: RecyclerView
+    lateinit var searchView: SearchView
+    lateinit var layout_selamatdatang : MaterialCardView
+    lateinit var layout_sliderseni : LinearLayout
 //    lateinit var rvProdukTerlasir: RecyclerView
 //    lateinit var rvElektronik: RecyclerView
 
@@ -30,6 +43,8 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        _binding = FragmentHomeBinding.inflate(layoutInflater)
 
         val view : View = inflater.inflate(R.layout.fragment_home, container, false)
 //        mainButton()
@@ -66,6 +81,9 @@ class HomeFragment : Fragment() {
         rvSeni.adapter = AdapterSeni(requireActivity(), listSeni)
         rvSeni.layoutManager = layoutManager
 
+        rvSeniRekom.adapter = AdapterRekomSeni(requireActivity(), listSeni)
+        rvSeniRekom.layoutManager = layoutManager2
+
 //        rvElektronik.adapter = AdapterSeni(requireActivity(), listSeni)
 //        rvElektronik.layoutManager = layoutManager2
 
@@ -90,9 +108,89 @@ class HomeFragment : Fragment() {
         })
     }
 
+//    private fun displaySearch() {
+//
+//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                if (query?.isEmpty() == true){
+//                    layout_selamatdatang.visibility = View.VISIBLE
+//                    layout_sliderseni.visibility = View.VISIBLE
+//                    rvSeni.visibility = View.GONE
+//                } else{
+//                    pb.visibility = View.VISIBLE
+//                    layout_banner.visibility = View.GONE
+//                    layout_produk.visibility = View.GONE
+//                    ApiConfig.instanceRetrofit.getSearch(query?.toLowerCase()!!).enqueue(object :  Callback<ResponModel>{
+//                        override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+//                            pb.visibility = View.GONE
+//                            val res = response.body()!!
+//                            if(res.success == 1) {
+//                                rv_listproduk.visibility = View.VISIBLE
+//                                listProduk = res.produks
+//                                displaylistProduk()
+//                            } else if (res.produks == null){
+//                                tvError.visibility = View.VISIBLE
+//                                error(res.message)
+//                            }
+//                        }
+//
+//                        override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+//                            pb.visibility = View.GONE
+//                            tvError.visibility = View.VISIBLE
+//                            error(t.message.toString())
+//                        }
+//
+//                    })
+//                }
+//
+//                return false
+//            }
+//
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                if (newText?.isEmpty() == true){
+//                    layout_selamatdatang.visibility = View.VISIBLE
+//                    layout_sliderseni.visibility = View.VISIBLE
+//                    rv_listproduk.visibility = View.GONE
+//
+//                } else{
+//                    pb.visibility = View.VISIBLE
+//                    layout_banner.visibility = View.GONE
+//                    layout_produk.visibility = View.GONE
+//                    ApiConfig.instanceRetrofit.getSearch(newText?.toLowerCase()!!).enqueue(object :  Callback<ResponModel>{
+//                        override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+//                            pb.visibility = View.GONE
+//                            val res = response.body()!!
+//                            if(res.success == 1) {
+//                                rv_listproduk.visibility = View.VISIBLE
+//                                listProduk = res.produks
+//                                displaylistProduk()
+//                            } else if (res.produks == null){
+//                                tvError.visibility = View.VISIBLE
+//                                error(res.message)
+//                            }
+//                        }
+//
+//                        override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+//                            pb.visibility = View.GONE
+//                            tvError.visibility = View.VISIBLE
+//                            error(t.message.toString())
+//                        }
+//
+//                    })
+//                }
+//
+//                return false
+//            }
+//
+//        })
+//    }
+
     fun init(view: View) {
         vpSlider = view.findViewById(R.id.vp_slider)
         rvSeni = view.findViewById(R.id.rv_seni)
+        rvSeniRekom = view.findViewById(R.id.rv_senirekom)
+        layout_selamatdatang = view.findViewById(R.id.layout_selamatdatang)
+        layout_sliderseni = view.findViewById(R.id.layout_sliderseni)
 //        rvElektronik = view.findViewById(R.id.rv_elektronik)
 //        rvProdukTerlasir = view.findViewById(R.id.rv_produkTerlasir)
     }

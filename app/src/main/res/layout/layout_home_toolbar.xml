@@ -10,6 +10,7 @@
     android:paddingVertical="@dimen/_8sdp">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_selamatdatang"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_30sdp"
         android:layout_marginEnd="@dimen/_5sdp"
@@ -17,23 +18,20 @@
         app:cardCornerRadius="@dimen/_7sdp">
 
         <LinearLayout
+            android:padding="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/_7sdp">
+            android:background="@color/white"
+            android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_15sdp"
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:src="@drawable/ic_baseline_search_24" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="Cari seni disini"
-                android:textSize="@dimen/_12sdp" />
+                android:id="@+id/edt_search"
+                app:iconifiedByDefault="false"
+                android:layout_margin="2dp"
+                app:queryHint="Cari seni"
+                android:background="@drawable/bgsearch"/>
 
         </LinearLayout>
 
