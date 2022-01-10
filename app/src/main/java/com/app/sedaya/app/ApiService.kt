@@ -31,7 +31,6 @@ interface ApiService {
     fun updateProfile(
         @Field("usr_id") usr_id : Int,
         @Field("nama") nama :String,
-        @Field("email") email :String,
         @Field("telp") telp :String,
         @Field("alamat") alamat :String
     ):Call<ResponModel>
