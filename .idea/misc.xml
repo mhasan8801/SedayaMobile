@@ -18,11 +18,11 @@
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/drawable/white_background.xml" value="0.2203125" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_baru.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_detail_seni.xml" value="0.22" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_detail_seni.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_main2.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_masuk.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_masuk.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_update_profile.xml" value="0.22" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/fragment_akun.xml" value="0.25" />
@@ -39,9 +39,9 @@
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/item_seni.xml" value="0.6370558375634517" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/item_seni0.xml" value="0.22" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/item_seni1.xml" value="0.25" />
-        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/item_senisemua.xml" value="0.25" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/item_senisemua.xml" value="0.5" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/item_slider.xml" value="0.21" />
-        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/layout_home_member.xml" value="0.22" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/layout_home_member.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/layout_home_toolbar.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/toolbar_custom.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21" />

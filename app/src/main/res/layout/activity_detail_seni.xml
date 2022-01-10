@@ -50,20 +50,21 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
-                            android:layout_toLeftOf="@+id/btn_share"
                             android:ellipsize="marquee"
-                            android:maxLines="3"
-                            android:text="Nama Produk "
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLines="1"
+                            android:text="Judul Seni "
                             android:textColor="@color/colorPrimary"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/_16sdp"
+                            android:textStyle="bold" />
 
-                        <ImageView
-                            android:id="@+id/btn_share"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            app:srcCompat="@drawable/ic_baseline_share_24" />
+<!--                        <ImageView-->
+<!--                            android:id="@+id/btn_share"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentRight="true"-->
+<!--                            android:layout_centerVertical="true"-->
+<!--                            app:srcCompat="@drawable/ic_baseline_share_24" />-->
 
                     </RelativeLayout>
 
@@ -72,20 +73,18 @@
                         android:id="@+id/tv_harga"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:text="Rp.0"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="@dimen/_12ssp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Alamat : "
-                        android:textColor="@color/colorPrimary_800"
-                        android:textSize="14dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_10ssp"/>
 
                     <TextView
                         android:id="@+id/tv_alamat"
@@ -93,8 +92,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="Alamat disini"
-                        android:textColor="@color/dark"
-                        android:textSize="13dp" />
+                        android:textSize="@dimen/_10ssp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -113,15 +111,15 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Nama Seniman"
-                                android:textColor="@color/colorPrimaryDark" />
+                                android:textSize="@dimen/_10ssp"
+                                android:textStyle="bold"/>
 
                             <TextView
                                 android:id="@+id/tv_namaseniman"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="namasnm disini"
-                                android:textColor="#657191"
-                                android:textSize="13dp" />
+                                android:textSize="@dimen/_10ssp"/>
 
                         </LinearLayout>
 
@@ -147,15 +145,15 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="Kategori "
-                                    android:textColor="@color/colorPrimaryDark" />
+                                    android:textSize="@dimen/_10ssp"
+                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:id="@+id/tv_kategori"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="kategori disini"
-                                    android:textColor="#657191"
-                                    android:textSize="13dp" />
+                                    android:textSize="@dimen/_10ssp"/>
 
                             </LinearLayout>
 
@@ -182,16 +180,17 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Jenis"
-                                    android:textColor="@color/colorPrimaryDark" />
+                                    android:text="Jenis "
+                                    android:textSize="@dimen/_10ssp"
+                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:id="@+id/tv_jenis"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="jenis disini"
-                                    android:textColor="#657191"
-                                    android:textSize="13dp" />
+                                    android:text="Jenis disini"
+                                    android:maxLines="1"
+                                    android:textSize="@dimen/_10ssp"/>
 
                             </LinearLayout>
 
@@ -210,9 +209,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="Overview"
-                    android:textColor="@color/dark"
-                    android:textSize="15dp"
+                    android:text="Keterangan :"
+                    android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -220,9 +218,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:text="Pembelian dalam jumlah besar hubungi"
-                    android:textColor="@color/dark"
-                    android:textSize="13dp" />
+                    android:text="Deskripsi atau keterangan seni disini"
+                    android:textSize="@dimen/_10ssp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -260,54 +257,54 @@
         <LinearLayout
             android:id="@+id/div_footer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_42sdp"
             android:layout_alignParentBottom="true"
             android:orientation="horizontal"
             android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp">
+            android:paddingVertical="7dp">
 
-            <RelativeLayout
-                android:id="@+id/btn_favorit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_btn_keranjang">
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/btn_favorit"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/bg_btn_keranjang">-->
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    app:srcCompat="@drawable/ic_baseline_favorite_border_24" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:id="@+id/btn_keranjang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/bg_btn_keranjang">
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/btn_keranjang"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:background="@drawable/bg_btn_keranjang">-->
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24" />
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
+                android:layout_gravity="center_vertical"
                 android:background="@drawable/bg_btn_beli">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="Beli Sekarang"
+                    android:text="Transaksi via website"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>

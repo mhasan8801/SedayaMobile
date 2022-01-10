@@ -62,10 +62,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
                     android:layout_weight="1"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="@dimen/_10sdp"
                     android:paddingVertical="@dimen/_5sdp">
 
@@ -73,23 +74,26 @@
                         android:id="@+id/tv_poin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:text="Selamat datang"
-                        android:textSize="@dimen/_11ssp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_18sdp"
+                        android:text="Selamat Datang di Sedaya"
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/colorPrimary_800"
                         android:textStyle="bold"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:text="di Sedaya"
-                        android:textSize="@dimen/_11ssp"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_poin" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="@dimen/_8sdp"-->
+<!--                        android:text="di Sedaya"-->
+<!--                        android:textSize="@dimen/_11ssp"-->
+<!--                        android:visibility="visible"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/tv_poin" />-->
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"

@@ -32,10 +32,17 @@ class HomeFragment : Fragment() {
     ): View? {
 
         val view : View = inflater.inflate(R.layout.fragment_home, container, false)
+//        mainButton()
         init(view)
         getSeni()
         displaySeni()
         return view
+    }
+
+    private fun mainButton() {
+//        tvLihatsemua.setOnClickListener {
+//            startActivity(Intent(requireContext(),KeranjangFragment::class.java))
+//        }
     }
 
     fun displaySeni() {

@@ -42,8 +42,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/_3sdp"
                 android:text="Judul seni"
+                android:textStyle="bold"
                 android:ellipsize="end"
-                android:maxLines="3"
+                android:maxLines="1"
                 android:textSize="@dimen/_11ssp" />
 
             <TextView
@@ -52,9 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/_3sdp"
                 android:text="Rp 10.000"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_11ssp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/_11ssp"/>
 
 
             <LinearLayout
@@ -102,12 +101,12 @@
                 app:cardElevation="0dp">
 
                 <TextView
-                    android:id="@+id/tv_alamat"
+                    android:id="@+id/tv_kategori"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_3sdp"
                     android:layout_marginVertical="@dimen/_3sdp"
-                    android:text="Probolinggo"
+                    android:text="Kelompok"
                     android:textColor="@color/blueSoft"
                     android:textSize="@dimen/_10sdp"
                     android:textStyle="bold" />
@@ -115,11 +114,11 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/tv_kategori"
+                android:id="@+id/tv_jenis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/_3sdp"
-                android:text="Kelompok"
+                android:text="tari"
                 android:textSize="@dimen/_9sdp" />
 
             <LinearLayout

@@ -15,6 +15,7 @@ import com.app.sedaya.helper.Helper
 import com.app.sedaya.model.Seni
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
+import org.w3c.dom.Text
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -24,6 +25,9 @@ class AdapterSeniSemua (var activity: Activity, var data: ArrayList<Seni>) : Rec
         val tvJudul = view.findViewById<TextView>(R.id.tv_judul)
         val tvHarga = view.findViewById<TextView>(R.id.tv_harga)
         val imgSeni = view.findViewById<ImageView>(R.id.img_seni)
+        val tvKategori = view.findViewById<TextView>(R.id.tv_kategori)
+        val tvJenis = view.findViewById<TextView>(R.id.tv_jenis)
+        val tvNamasnm = view.findViewById<TextView>(R.id.tv_namasnm)
         val layout = view.findViewById<CardView>(R.id.layout_senisemua)
 
     }
@@ -41,6 +45,9 @@ class AdapterSeniSemua (var activity: Activity, var data: ArrayList<Seni>) : Rec
         holder.tvJudul.text = data[position].judul
         holder.tvHarga.text = Helper().gantiRp(data[position].harga)
 //        holder.imgSeni.setImageResource(data[position].gambar)
+        holder.tvKategori.text = data[position].kategori
+        holder.tvJenis.text = data[position].jenis
+        holder.tvNamasnm.text = "Oleh " + data[position].nama_snm
 
         val gambar = "http://ws-tif.com/sedaya/admin/public/img/seni/"+data[position].gambar
         Picasso.get()
