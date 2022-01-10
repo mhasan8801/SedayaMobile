@@ -60,16 +60,6 @@
                     android:textSize="@dimen/_15sdp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_lihatsemua"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:text="Lihat Semua"
-                    android:textColor="@color/colorPrimary_700"
-                    android:textSize="@dimen/_11sdp"
-                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -110,17 +100,6 @@
                     android:text="Rekomendasi seni"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_15sdp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_lihatsemua2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:text="Lihat Semua"
-                    android:textColor="@color/colorPrimary_700"
-                    android:textSize="@dimen/_11sdp"
                     android:textStyle="bold" />
 
             </RelativeLayout>

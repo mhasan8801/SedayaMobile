@@ -1,22 +1,26 @@
 package com.app.sedaya.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.app.sedaya.R
+import com.app.sedaya.activity.MasukActivity
 import com.app.sedaya.adapter.AdapterRekomSeni
 import com.app.sedaya.adapter.AdapterSeni
 import com.app.sedaya.adapter.AdapterSlider
 import com.app.sedaya.app.ApiConfig
 import com.app.sedaya.databinding.FragmentAkunBinding
 import com.app.sedaya.databinding.FragmentHomeBinding
+import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.ResponModel
 import com.app.sedaya.model.Seni
 import com.google.android.material.card.MaterialCardView
@@ -30,9 +34,12 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    lateinit var sP:SharedPref
     lateinit var vpSlider : ViewPager
     lateinit var rvSeni: RecyclerView
     lateinit var rvSeniRekom: RecyclerView
+    lateinit var tvWelcome: TextView
+    lateinit var tvNama: TextView
     lateinit var searchView: SearchView
     lateinit var layout_selamatdatang : MaterialCardView
     lateinit var layout_sliderseni : LinearLayout
@@ -47,7 +54,18 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(layoutInflater)
 
         val view : View = inflater.inflate(R.layout.fragment_home, container, false)
-//        mainButton()
+        mainButton()
+
+        sP = SharedPref(requireActivity())
+        val user = sP.getUser()!!
+        tvWelcome = view.findViewById(R.id.tv_welcome)
+        tvNama = view.findViewById(R.id.tv_nama)
+        if (sP.getStatusLogin()) {
+            tvWelcome.setText("Selamat Datang ")
+            tvNama.setText(user.nama)
+        }
+
+
         init(view)
         getSeni()
         getRekomSeni()
@@ -56,9 +74,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun mainButton() {
-//        tvLihatsemua.setOnClickListener {
-//            startActivity(Intent(requireContext(),KeranjangFragment::class.java))
-//        }
     }
 
     fun displaySeni() {

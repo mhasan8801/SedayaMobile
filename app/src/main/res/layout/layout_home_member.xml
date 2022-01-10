@@ -66,32 +66,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:paddingHorizontal="@dimen/_10sdp"
                     android:paddingVertical="@dimen/_5sdp">
 
                     <TextView
-                        android:id="@+id/tv_poin"
+                        android:id="@+id/tv_welcome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/_18sdp"
-                        android:text="Selamat Datang di Sedaya"
-                        android:textSize="@dimen/_14ssp"
+                        android:text="Selamat datang di:"
+                        android:textSize="@dimen/_9ssp"
                         android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/colorPrimary_800"
                         android:textStyle="bold"
                         app:layout_constraintTop_toTopOf="parent" />
 
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="@dimen/_8sdp"-->
-<!--                        android:text="di Sedaya"-->
-<!--                        android:textSize="@dimen/_11ssp"-->
-<!--                        android:visibility="visible"-->
-<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@+id/tv_poin" />-->
+                    <TextView
+                        android:id="@+id/tv_nama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_18sdp"
+                        android:text="Sedaya | Expose Your Art With Us!"
+                        android:textSize="@dimen/_13ssp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/colorPrimary_800"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </LinearLayout>
 
