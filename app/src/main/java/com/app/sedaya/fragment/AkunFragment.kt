@@ -57,6 +57,7 @@ class AkunFragment : Fragment() {
     private fun mainButton() {
         btnLogout.setOnClickListener {
             sP.setStatusLogin(false)
+            startActivity(Intent(requireContext(), LoginActivity::class.java))
         }
         btnUpdate.setOnClickListener {
             startActivity(Intent(requireContext(), UpdateProfileActivity::class.java))
