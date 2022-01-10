@@ -38,6 +38,12 @@ interface ApiService {
     @GET("seni.php")
     fun getSeni(): Call<ResponModel>
 
+    @GET("rekom-seni.php")
+    fun getRekomSeni(): Call<ResponModel>
+
+    @GET("seni-terbaru.php")
+    fun getSeniTerbaru(): Call<ResponModel>
+
     @FormUrlEncoded
     @POST("update-profile.php")
     fun updateAkun(

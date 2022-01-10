@@ -50,6 +50,7 @@ class HomeFragment : Fragment() {
 //        mainButton()
         init(view)
         getSeni()
+        getRekomSeni()
         displaySeni()
         return view
     }
@@ -81,7 +82,7 @@ class HomeFragment : Fragment() {
         rvSeni.adapter = AdapterSeni(requireActivity(), listSeni)
         rvSeni.layoutManager = layoutManager
 
-        rvSeniRekom.adapter = AdapterRekomSeni(requireActivity(), listSeni)
+        rvSeniRekom.adapter = AdapterRekomSeni(requireActivity(), listRekomSeni)
         rvSeniRekom.layoutManager = layoutManager2
 
 //        rvElektronik.adapter = AdapterSeni(requireActivity(), listSeni)
@@ -91,9 +92,25 @@ class HomeFragment : Fragment() {
 //        rvProdukTerlasir.layoutManager = layoutManager3
     }
 
+    private var listRekomSeni: ArrayList<Seni> = ArrayList()
+    fun getRekomSeni() {
+        ApiConfig.instanceRetrofit.getRekomSeni().enqueue(object : Callback<ResponModel> {
+            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+                val res = response.body()!!
+                if (res.code == 200) {
+                    listRekomSeni = res.seni
+                    displaySeni()
+                }
+            }
+        })
+    }
     private var listSeni: ArrayList<Seni> = ArrayList()
     fun getSeni() {
-        ApiConfig.instanceRetrofit.getSeni().enqueue(object : Callback<ResponModel> {
+        ApiConfig.instanceRetrofit.getSeniTerbaru().enqueue(object : Callback<ResponModel> {
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {
 
             }
