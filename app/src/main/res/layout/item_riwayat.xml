@@ -30,9 +30,9 @@
 
             <ImageView
                 android:id="@+id/img_produk"
-                android:layout_width="165dp"
+                android:layout_width="@dimen/_95sdp"
                 android:src="@drawable/asset_produk1"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/_95sdp"
                 android:background="@color/white"
                 android:cropToPadding="true"
                 android:scaleType="centerCrop"
