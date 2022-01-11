@@ -51,7 +51,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
@@ -59,12 +59,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_45sdp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:paddingHorizontal="@dimen/_10sdp"
@@ -76,7 +76,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/_18sdp"
-                        android:text="Selamat datang di:"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Selamat datang di :"
                         android:textSize="@dimen/_9ssp"
                         android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/colorPrimary_800"
@@ -90,7 +91,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/_18sdp"
                         android:text="Sedaya | Expose Your Art With Us!"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/colorPrimary_800"
                         android:textStyle="bold"

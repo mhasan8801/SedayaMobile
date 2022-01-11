@@ -17,6 +17,7 @@ import com.app.sedaya.adapter.AdapterRiwayat
 import com.app.sedaya.app.ApiConfig
 import com.app.sedaya.databinding.ActivityLoginBinding
 import com.app.sedaya.databinding.ActivityRiwayatBinding
+import com.app.sedaya.databinding.ActivityUpdateProfileBinding
 import com.app.sedaya.databinding.FragmentHomeBinding
 import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.History
@@ -27,13 +28,23 @@ import retrofit2.Response
 
 class RiwayatActivity : AppCompatActivity() {
 
+    private var _binding: ActivityRiwayatBinding? = null
+    private val binding get() = _binding!!
+
+
 
     lateinit var sP: SharedPref
     lateinit var rvHistory: RecyclerView
     lateinit var swipeRefresh: SwipeRefreshLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_riwayat)
+        _binding = ActivityRiwayatBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+        supportActionBar!!.title = "Riwayat Pesanan"
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         sP = SharedPref(this)
         rvHistory = findViewById(R.id.rv_riwayat)

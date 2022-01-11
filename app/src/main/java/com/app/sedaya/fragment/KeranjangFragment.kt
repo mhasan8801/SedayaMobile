@@ -1,15 +1,18 @@
 package com.app.sedaya.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager.widget.ViewPager
 import com.app.sedaya.R
+import com.app.sedaya.activity.RiwayatActivity
 import com.app.sedaya.adapter.AdapterSeni
 import com.app.sedaya.adapter.AdapterSeniSemua
 import com.app.sedaya.adapter.AdapterSlider
@@ -26,6 +29,7 @@ class KeranjangFragment : Fragment() {
 //    lateinit var vpSlider : ViewPager
     lateinit var rvSeni: RecyclerView
     lateinit var swipeRefresh: SwipeRefreshLayout
+    lateinit var btn_riwayat : ImageView
 //    lateinit var rvProdukTerlasir: RecyclerView
 //    lateinit var rvElektronik: RecyclerView
 
@@ -35,6 +39,11 @@ class KeranjangFragment : Fragment() {
     ): View? {
 
         val view : View = inflater.inflate(R.layout.fragment_keranjang, container, false)
+
+        btn_riwayat = view.findViewById(R.id.btn_riwayat)
+        btn_riwayat.setOnClickListener {
+            startActivity(Intent(requireContext(), RiwayatActivity::class.java))
+        }
 
         init(view)
         getSeni()

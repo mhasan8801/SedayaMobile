@@ -8,31 +8,50 @@
     android:orientation="vertical"
     tools:context=".fragments.Keranjang">
 
-    <RelativeLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/white"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary_800"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:layout_marginBottom="5sp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Riwayat"
-            android:layout_centerInParent="true"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:padding="@dimen/_5sdp"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-        <ImageView
-            android:id="@+id/btn_delete"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_baseline_delete_24"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"/>
-    </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/colorPrimary_800"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="10dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Riwayat"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"/>-->
+
+<!--&lt;!&ndash;        <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/btn_delete"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="22dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="22dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_alignParentRight="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_centerVertical="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginLeft="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:src="@drawable/ic_baseline_delete_24" />&ndash;&gt;-->
+
+<!--    </RelativeLayout>-->
 
     <RelativeLayout
         android:layout_width="match_parent"
