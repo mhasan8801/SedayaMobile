@@ -84,8 +84,16 @@ class RiwayatActivity : AppCompatActivity() {
     fun refresh() {
         swipeRefresh.setOnRefreshListener {
             getHistory()
+            toastSuccess("Data sudah terbaru")
             swipeRefresh.isRefreshing = false
         }
+    }
+
+    fun toastError(message:String){
+        Toast.makeText(this@RiwayatActivity, message, Toast.LENGTH_SHORT).show()
+    }
+    fun toastSuccess(message:String){
+        Toast.makeText(this@RiwayatActivity,message, Toast.LENGTH_SHORT).show()
     }
     fun displayHistory() {
 
