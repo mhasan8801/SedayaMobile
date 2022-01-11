@@ -3,6 +3,7 @@ package com.app.sedaya.model;
 import java.io.Serializable;
 
 public class History implements Serializable {
+    public int no_transaksi;
     public int sn_id;
     public String judul;
     public String kategori;

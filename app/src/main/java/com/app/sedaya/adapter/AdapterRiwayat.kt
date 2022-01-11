@@ -1,6 +1,7 @@
 package com.app.sedaya.adapter
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -8,19 +9,25 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.app.sedaya.R
-import com.app.sedaya.activity.DetailSeniActivity
-import com.app.sedaya.helper.Helper
+import com.app.sedaya.app.ApiConfig
+import com.app.sedaya.activity.RiwayatActivity
+import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.History
-import com.app.sedaya.model.Seni
-import com.google.gson.Gson
+import com.app.sedaya.model.ResponModel
+import com.app.sedaya.helper.Helper
 import com.squareup.picasso.Picasso
 import kotlin.collections.ArrayList
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class AdapterRiwayat(var activity: Activity, var data: ArrayList<History>) : RecyclerView.Adapter<AdapterRiwayat.Holder>() {
 
+    lateinit var sP: SharedPref
+    lateinit var riwayat: RiwayatActivity
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
         val tvJudul = view.findViewById<TextView>(R.id.tv_judul)
         val tvStatus = view.findViewById<TextView>(R.id.tv_status)
@@ -47,37 +54,10 @@ class AdapterRiwayat(var activity: Activity, var data: ArrayList<History>) : Rec
     fun mainButton(){
 
     }
-    fun Batal() {
-        //
-//        val user = sP.getUser()!!
-//
-//        ApiConfig.instanceRetrofit.transaksi(
-//            user.usr_id
-//        )
-//            .enqueue(object : Callback<ResponModel>{
-//                override fun onFailure(call: Call<ResponModel>, t: Throwable) {
-//                    //handle ketika gagal
-//                    Toast.makeText(this@RiwayatActivity,"Error : "+t.message, Toast.LENGTH_SHORT).show()
-//                }
-//
-//                override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-//                    val respon = response.body()!!
-//                    if (respon.code == 200) {
-//                        sP.setStatusLogin(true)
-//                        val intent = Intent(this@RiwayatActivity, RiwayatActivity::class.java)
-//                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-//                        startActivity(intent)
-//                        finish()
-//                        Toast.makeText(this@RiwayatActivity,"Selamat datang "+respon.data.nama, Toast.LENGTH_SHORT).show()
-//                    } else {
-//                        Toast.makeText(this@RiwayatActivity,"Error : "+respon.message, Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//            })
-    }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
+        riwayat = RiwayatActivity()
         holder.tvJudul.text = data[position].judul
         if (data[position].t_status=="0"){
             holder.btnBayar.visibility = View.GONE
@@ -107,13 +87,68 @@ class AdapterRiwayat(var activity: Activity, var data: ArrayList<History>) : Rec
             .placeholder(R.drawable.loadingseni)
             .error(R.drawable.loadingseni)
             .into(holder.imgProduk)
+        //button bayar
+        holder.btnBayar.setOnClickListener(){
+            ApiConfig.instanceRetrofit.pembayaran(
+                data[position].no_transaksi
+            )
+                .enqueue(object : Callback<ResponModel>{
+                    override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+                        //handle ketika gagal
+//                        Toast.makeText(this@AdapterRiwayat,"Error : "+t.message, Toast.LENGTH_SHORT).show()
+                    }
 
-//        holder.layout.setOnClickListener {
-//            val activiti = Intent(activity, DetailSeniActivity::class.java)
-//
-//            val string = Gson().toJson(data[position], Seni::class.java)
-//            activiti.putExtra("extra", string)
-//            activity.startActivity(activiti)
-//        }
+                    override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+                        val respon = response.body()!!
+                        if (respon.code == 200) {
+                            holder.btnBayar.visibility = View.GONE
+                            holder.tvStatus.text = "Dalam proses"
+                        } else {
+                        }
+                    }
+                })
+        }
+        //button batal
+        holder.btnBatal.setOnClickListener(){
+            ApiConfig.instanceRetrofit.batal(
+                data[position].no_transaksi
+            )
+                .enqueue(object : Callback<ResponModel>{
+                    override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+                        //handle ketika gagal
+//                        Toast.makeText(this@AdapterRiwayat,"Error : "+t.message, Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+                        val respon = response.body()!!
+                        if (respon.code == 200) {
+                            holder.btnBatal.visibility = View.GONE
+                            holder.tvStatus.text = "Batal"
+                        } else {
+                        }
+                    }
+                })
+        }
+        //button Selesai
+        holder.btnSelesai.setOnClickListener(){
+            ApiConfig.instanceRetrofit.selesai(
+                data[position].no_transaksi
+            )
+                .enqueue(object : Callback<ResponModel>{
+                    override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+                        //handle ketika gagal
+//                        Toast.makeText(this@AdapterRiwayat,"Error : "+t.message, Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+                        val respon = response.body()!!
+                        if (respon.code == 200) {
+                            holder.btnSelesai.visibility = View.GONE
+                            holder.tvStatus.text = "Selesai"
+                        } else {
+                        }
+                    }
+                })
+        }
     }
 }

@@ -43,7 +43,34 @@ class RiwayatActivity : AppCompatActivity() {
         getHistory()
     }
 
-    private fun refresh() {
+//    fun Batal() {
+//
+//        ApiConfig.instanceRetrofit.transaksi(
+//            user.usr_id
+//        )
+//            .enqueue(object : Callback<ResponModel>{
+//                override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+//                    //handle ketika gagal
+//                    Toast.makeText(this@RiwayatActivity,"Error : "+t.message, Toast.LENGTH_SHORT).show()
+//                }
+//
+//                override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+//                    val respon = response.body()!!
+//                    if (respon.code == 200) {
+//                        sP.setStatusLogin(true)
+//                        val intent = Intent(this@RiwayatActivity, RiwayatActivity::class.java)
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+//                        startActivity(intent)
+//                        finish()
+//                        Toast.makeText(this@RiwayatActivity,"Selamat datang "+respon.data.nama, Toast.LENGTH_SHORT).show()
+//                    } else {
+//                        Toast.makeText(this@RiwayatActivity,"Error : "+respon.message, Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            })
+//    }
+
+    fun refresh() {
         swipeRefresh.setOnRefreshListener {
             getHistory()
             swipeRefresh.isRefreshing = false
@@ -81,13 +108,4 @@ class RiwayatActivity : AppCompatActivity() {
         onBackPressed()
         return super.onSupportNavigateUp()
     }
-//    fun init(view: View) {
-//        rvHistory = view.findViewById(R.id.rv_riwayat)
-//        btnBatal = view.findViewById(R.id.btn_batal)
-//        btnBayar = view.findViewById(R.id.btn_bayar)
-//        btnSelesai = view.findViewById(R.id.btn_selesai)
-
-//        rvElektronik = view.findViewById(R.id.rv_elektronik)
-//        rvProdukTerlasir = view.findViewById(R.id.rv_produkTerlasir)
-//    }
 }
