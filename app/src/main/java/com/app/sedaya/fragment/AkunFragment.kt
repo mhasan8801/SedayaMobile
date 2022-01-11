@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.app.sedaya.MainActivity
 import com.app.sedaya.R
 import com.app.sedaya.activity.DetailSeniActivity
@@ -24,9 +25,6 @@ import kotlinx.coroutines.Dispatchers.Main
 
 class AkunFragment : Fragment() {
 
-    private var _binding: FragmentAkunBinding? = null
-    private val binding get() = _binding!!
-
     lateinit var sP:SharedPref
     lateinit var btnLogout:TextView
     lateinit var btnUpdate:TextView
@@ -34,6 +32,7 @@ class AkunFragment : Fragment() {
     lateinit var tvEmail:TextView
     lateinit var tvTelp:TextView
     lateinit var tvAlamat:TextView
+    lateinit var swipeRefresh : SwipeRefreshLayout
     lateinit var tvInisial:TextView
 
     override fun onCreateView(
@@ -41,19 +40,24 @@ class AkunFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentAkunBinding.inflate(layoutInflater)
 
         // Inflate the layout for this fragment
         val view : View = inflater.inflate(R.layout.fragment_akun, container, false)
+        swipeRefresh = view.findViewById(R.id.swipeRefresh)
         init(view)
 
         sP = SharedPref(requireActivity())
-
+        refresh()
         mainButton()
         setData()
         return view
     }
-
+    private fun refresh() {
+        swipeRefresh.setOnRefreshListener {
+            setData()
+            swipeRefresh.isRefreshing = false
+        }
+    }
     private fun mainButton() {
         btnLogout.setOnClickListener {
             sP.setStatusLogin(false)
@@ -91,6 +95,7 @@ class AkunFragment : Fragment() {
 
     private fun init(view: View) {
         btnLogout = view.findViewById(R.id.btn_logout)
+        swipeRefresh = view.findViewById(R.id.swipeRefresh)
         btnUpdate = view.findViewById(R.id.btn_update)
         tvNama = view.findViewById(R.id.tv_name)
         tvEmail = view.findViewById(R.id.tv_email)
