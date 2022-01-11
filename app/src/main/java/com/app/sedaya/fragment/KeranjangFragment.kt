@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager.widget.ViewPager
 import com.app.sedaya.R
 import com.app.sedaya.adapter.AdapterSeni
@@ -24,6 +25,7 @@ class KeranjangFragment : Fragment() {
 
 //    lateinit var vpSlider : ViewPager
     lateinit var rvSeni: RecyclerView
+    lateinit var swipeRefresh: SwipeRefreshLayout
 //    lateinit var rvProdukTerlasir: RecyclerView
 //    lateinit var rvElektronik: RecyclerView
 
@@ -33,10 +35,18 @@ class KeranjangFragment : Fragment() {
     ): View? {
 
         val view : View = inflater.inflate(R.layout.fragment_keranjang, container, false)
+
         init(view)
         getSeni()
+        refresh()
         displaySeni()
         return view
+    }
+    private fun refresh() {
+        swipeRefresh.setOnRefreshListener {
+            getSeni()
+            swipeRefresh.isRefreshing = false
+        }
     }
 
     fun displaySeni() {
@@ -73,6 +83,7 @@ class KeranjangFragment : Fragment() {
 
     fun init(view: View) {
         rvSeni = view.findViewById(R.id.rv_senisemua)
+        swipeRefresh = view.findViewById(R.id.swipeRefresh)
 //        rvElektronik = view.findViewById(R.id.rv_elektronik)
 //        rvProdukTerlasir = view.findViewById(R.id.rv_produkTerlasir)
     }

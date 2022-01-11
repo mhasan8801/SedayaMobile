@@ -1,7 +1,6 @@
 package com.app.sedaya.fragment
 
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,16 +12,14 @@ import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager.widget.ViewPager
 import com.app.sedaya.R
-import com.app.sedaya.activity.MasukActivity
 import com.app.sedaya.activity.RiwayatActivity
-import com.app.sedaya.activity.UpdateProfileActivity
 import com.app.sedaya.adapter.AdapterRekomSeni
 import com.app.sedaya.adapter.AdapterSeni
 import com.app.sedaya.adapter.AdapterSlider
 import com.app.sedaya.app.ApiConfig
-import com.app.sedaya.databinding.FragmentAkunBinding
 import com.app.sedaya.databinding.FragmentHomeBinding
 import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.ResponModel
@@ -45,6 +42,7 @@ class HomeFragment : Fragment() {
     lateinit var tvWelcome: TextView
     lateinit var tvNama: TextView
     lateinit var searchView: SearchView
+    lateinit var swipeRefresh : SwipeRefreshLayout
     lateinit var layout_selamatdatang : MaterialCardView
     lateinit var layout_sliderseni : LinearLayout
     lateinit var btn_riwayat : ImageView
@@ -61,6 +59,7 @@ class HomeFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_home, container, false)
         mainButton()
 
+        swipeRefresh = view.findViewById(R.id.swipeRefresh)
         btn_riwayat = view.findViewById(R.id.btn_riwayat)
         btn_riwayat.setOnClickListener {
             startActivity(Intent(requireContext(), RiwayatActivity::class.java))
@@ -78,6 +77,7 @@ class HomeFragment : Fragment() {
 
         init(view)
         getSeni()
+        refresh()
         getRekomSeni()
         displaySeni()
         return view
@@ -87,6 +87,12 @@ class HomeFragment : Fragment() {
 //        btn_riwayat.setOnClickListener {
 //            startActivity(Intent(requireContext(), RiwayatActivity::class.java))
 //        }
+    }
+    private fun refresh() {
+        swipeRefresh.setOnRefreshListener {
+            getSeni()
+            swipeRefresh.isRefreshing = false
+        }
     }
 
     fun displaySeni() {

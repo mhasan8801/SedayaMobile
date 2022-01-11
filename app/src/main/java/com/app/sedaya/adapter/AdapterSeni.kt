@@ -15,10 +15,9 @@ import com.app.sedaya.helper.Helper
 import com.app.sedaya.model.Seni
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
-import java.util.*
 import kotlin.collections.ArrayList
 
-class AdapterSeni (var activity: Activity, var data: ArrayList<Seni>) : RecyclerView.Adapter<AdapterSeni.Holder>() {
+class AdapterSeni(var activity: Activity, var data: ArrayList<Seni>) : RecyclerView.Adapter<AdapterSeni.Holder>() {
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
         val tvJudul = view.findViewById<TextView>(R.id.tv_judul)

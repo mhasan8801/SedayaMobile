@@ -35,6 +35,12 @@ interface ApiService {
         @Field("alamat") alamat :String
     ):Call<ResponModel>
 
+    @FormUrlEncoded
+    @POST("history.php")
+    fun history(
+        @Field("usr_id") usr_id : Int,
+    ):Call<ResponModel>
+
     @GET("seni.php")
     fun getSeni(): Call<ResponModel>
 
