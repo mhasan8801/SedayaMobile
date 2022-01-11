@@ -33,6 +33,8 @@
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.UpdateProfileActivity" />
         <activity android:name=".activity.DetailSeniActivity" />
+        <activity android:name=".activity.KeranjangActivity" />
+        <activity android:name=".activity.RiwayatActivity" />
     </application>
 
 </manifest>

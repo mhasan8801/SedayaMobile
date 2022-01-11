@@ -1,11 +1,13 @@
 package com.app.sedaya.fragment
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.widget.SearchView
@@ -14,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.app.sedaya.R
 import com.app.sedaya.activity.MasukActivity
+import com.app.sedaya.activity.RiwayatActivity
+import com.app.sedaya.activity.UpdateProfileActivity
 import com.app.sedaya.adapter.AdapterRekomSeni
 import com.app.sedaya.adapter.AdapterSeni
 import com.app.sedaya.adapter.AdapterSlider
@@ -43,6 +47,7 @@ class HomeFragment : Fragment() {
     lateinit var searchView: SearchView
     lateinit var layout_selamatdatang : MaterialCardView
     lateinit var layout_sliderseni : LinearLayout
+    lateinit var btn_riwayat : ImageView
 //    lateinit var rvProdukTerlasir: RecyclerView
 //    lateinit var rvElektronik: RecyclerView
 
@@ -55,6 +60,11 @@ class HomeFragment : Fragment() {
 
         val view : View = inflater.inflate(R.layout.fragment_home, container, false)
         mainButton()
+
+        btn_riwayat = view.findViewById(R.id.btn_riwayat)
+        btn_riwayat.setOnClickListener {
+            startActivity(Intent(requireContext(), RiwayatActivity::class.java))
+        }
 
         sP = SharedPref(requireActivity())
         val user = sP.getUser()!!
@@ -74,6 +84,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun mainButton() {
+//        btn_riwayat.setOnClickListener {
+//            startActivity(Intent(requireContext(), RiwayatActivity::class.java))
+//        }
     }
 
     fun displaySeni() {
@@ -223,6 +236,7 @@ class HomeFragment : Fragment() {
         rvSeniRekom = view.findViewById(R.id.rv_senirekom)
         layout_selamatdatang = view.findViewById(R.id.layout_selamatdatang)
         layout_sliderseni = view.findViewById(R.id.layout_sliderseni)
+
 //        rvElektronik = view.findViewById(R.id.rv_elektronik)
 //        rvProdukTerlasir = view.findViewById(R.id.rv_produkTerlasir)
     }
