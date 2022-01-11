@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/My File/MATKUL/SMT 3/SedayaMobile/app/src/main/res/drawable-v24/ic_baseline_favorite_border_24.xml" value="0.284375" />
+        <entry key="..\:/My File/MATKUL/SMT 3/SedayaMobile/app/src/main/res/layout/activity_detail_seni.xml" value="0.36666666666666664" />
+        <entry key="..\:/My File/MATKUL/SMT 3/SedayaMobile/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/My File/MATKUL/SMT 3/SedayaMobile/app/src/main/res/layout/activity_update_profile.xml" value="0.2653985507246377" />
         <entry key="..\:/My File/MATKUL/SMT 3/SedayaMobile/app/src/main/res/layout/fragment_home.xml" value="0.2682291666666667" />
         <entry key="..\:/My File/MATKUL/SMT 3/SedayaMobile/app/src/main/res/layout/layout_home_member.xml" value="0.2682291666666667" />
+        <entry key="..\:/My File/MATKUL/SMT 3/SedayaMobile/app/src/main/res/layout/layout_home_toolbar.xml" value="0.2682291666666667" />
         <entry key="..\:/My File/MATKUL/SMT 3/SedayaMobile/app/src/main/res/xml/config_network.xml" value="0.1" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/drawable-v24/bg_btn_beli.xml" value="0.2203125" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/drawable-v24/bg_bulet.xml" value="0.1125" />

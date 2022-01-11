@@ -45,13 +45,12 @@ interface ApiService {
     fun getSeniTerbaru(): Call<ResponModel>
 
     @FormUrlEncoded
-    @POST("update-profile.php")
-    fun updateAkun(
-        @Field("usr_id") id :Int,
-        @Field("nama") nama :String? = null,
-        @Field("email") email :String? = null,
-        @Field("telp") telp :String? = null,
-        @Field("alamat") alamat :String? = null,
+    @POST("transaksi.php")
+    fun transaksi(
+        @Field("usr_id") usr_id : Int,
+        @Field("sn_id") sn_id :String,
+        @Field("tgl_kegiatan") tgl_kegiatan :String,
+        @Field("harga") harga :String
     ):Call<ResponModel>
 
 }

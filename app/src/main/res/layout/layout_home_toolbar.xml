@@ -11,7 +11,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_selamatdatang"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/_280sdp"
         android:layout_height="@dimen/_30sdp"
         android:layout_marginEnd="@dimen/_5sdp"
         android:layout_toStartOf="@+id/ly_icon"
@@ -46,12 +46,12 @@
         android:orientation="horizontal">
 
 
-<!--        <androidx.appcompat.widget.AppCompatImageView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="@dimen/_5sdp"-->
-<!--            android:src="@drawable/ic_baseline_shopping_cart_24"-->
-<!--            app:tint="@color/white" />-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:src="@drawable/ic_baseline_shopping_cart_24"
+            app:tint="@color/white" />
 
     </LinearLayout>
 
