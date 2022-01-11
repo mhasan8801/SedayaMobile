@@ -91,6 +91,7 @@ class HomeFragment : Fragment() {
     private fun refresh() {
         swipeRefresh.setOnRefreshListener {
             getSeni()
+            getRekomSeni()
             swipeRefresh.isRefreshing = false
         }
     }
