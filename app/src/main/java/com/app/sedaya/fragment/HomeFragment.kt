@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager.widget.ViewPager
 import com.app.sedaya.R
+import com.app.sedaya.activity.LoginActivity
 import com.app.sedaya.activity.RiwayatActivity
 import com.app.sedaya.adapter.AdapterRekomSeni
 import com.app.sedaya.adapter.AdapterSeni
@@ -59,10 +60,17 @@ class HomeFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_home, container, false)
         mainButton()
 
+        sP = SharedPref(requireActivity())
         swipeRefresh = view.findViewById(R.id.swipeRefresh)
         btn_riwayat = view.findViewById(R.id.btn_riwayat)
-        btn_riwayat.setOnClickListener {
-            startActivity(Intent(requireContext(), RiwayatActivity::class.java))
+        if (sP.getStatusLogin()){
+            btn_riwayat.setOnClickListener {
+                startActivity(Intent(requireContext(), RiwayatActivity::class.java))
+            }
+        }else{
+            btn_riwayat.setOnClickListener {
+                startActivity(Intent(requireContext(), LoginActivity::class.java))
+            }
         }
 
 //        sP = SharedPref(requireActivity())

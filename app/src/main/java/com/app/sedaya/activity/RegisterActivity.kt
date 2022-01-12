@@ -2,6 +2,7 @@ package com.app.sedaya.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -42,6 +43,12 @@ class RegisterActivity : AppCompatActivity() {
 
     }
 
+    private fun isValidMail(email: String): Boolean {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+    private fun isValidMobile(phone: String): Boolean {
+        return Patterns.PHONE.matcher(phone).matches()
+    }
     fun register() {
         if (binding.edtNama.text.isEmpty()) {
             binding.edtNama.error="Kolom nama tidak boleh kosong"
@@ -62,6 +69,14 @@ class RegisterActivity : AppCompatActivity() {
         } else if (binding.edtPassword.text.isEmpty()) {
             binding.edtPassword.error = "Kolom password tidak boleh kosong"
             binding.edtPassword.requestFocus()
+            return
+        } else if (isValidMail(binding.edtEmail.text.toString())==false){
+            binding.edtEmail.error="Gunakan format email yang benar"
+            binding.edtEmail.requestFocus()
+            return
+        }else if(isValidMobile(binding.edtTelp.text.toString())==false){
+            binding.edtTelp.error="No.handphone harus angka"
+            binding.edtTelp.requestFocus()
             return
         }
 
