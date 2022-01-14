@@ -111,10 +111,6 @@ class UpdateProfileActivity : AppCompatActivity() {
                 val respon = response.body()!!
                 if (respon.code == 200) {
                     sP.setUser(respon.data)
-                    val intent = Intent(this@UpdateProfileActivity, MainActivity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                    startActivity(intent)
-                    finish()
                     Toast.makeText(this@UpdateProfileActivity,"Data berhasil disimpan", Toast.LENGTH_SHORT).show()
                     onBackPressed()
                 } else {

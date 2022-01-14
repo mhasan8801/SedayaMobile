@@ -68,7 +68,7 @@ class DetailSeniActivity : AppCompatActivity() {
                     val respon = response.body()!!
                     if (respon.code == 200) {
                         sP.setStatusLogin(true)
-                        val intent = Intent(this@DetailSeniActivity, MainActivity::class.java)
+                        val intent = Intent(this@DetailSeniActivity, RiwayatActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
                         finish()
