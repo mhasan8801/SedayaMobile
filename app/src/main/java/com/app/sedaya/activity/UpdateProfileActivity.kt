@@ -48,12 +48,29 @@ class UpdateProfileActivity : AppCompatActivity() {
         mainButton()
         setData()
     }
-
+    fun String?.getInitial(): String {
+        if (this.isNullOrEmpty()) return ""
+        val array = this.split(" ")
+        if (array.isEmpty()) return this
+        var inisial = array[0].substring(0, 1)
+        if (array.size > 1) inisial += array[1].substring(0, 1)
+        return inisial.uppercase()
+    }
     private fun setData() {
         val user = sP.getUser()!!
-        binding.edtNama.setText(user.nama)
-        binding.edtTelp.setText(user.telp)
-        binding.edtAlamat.setText(user.alamat)
+        ApiConfig.instanceRetrofit.detailUser(user.usr_id).enqueue(object : Callback<ResponModel> {
+            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+            }
+            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+                val res = response.body()!!
+                if (res.code == 200) {
+                    binding.edtNama.setText(res.data.nama)
+                    binding.edtTelp.setText(res.data.telp)
+                    binding.edtAlamat.setText(res.data.alamat)
+                    binding.tvInisial.text = res.data.nama.getInitial()
+                }
+            }
+        })
     }
 
     private fun mainButton(){
