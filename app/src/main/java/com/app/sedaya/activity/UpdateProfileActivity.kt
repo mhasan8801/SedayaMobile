@@ -4,23 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.sedaya.MainActivity
-import com.app.sedaya.R
 import com.app.sedaya.app.ApiConfig
-import com.app.sedaya.databinding.ActivityMasukBinding
-import com.app.sedaya.databinding.ActivityRegisterBinding
 import com.app.sedaya.databinding.ActivityUpdateProfileBinding
 import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.ResponModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.squareup.picasso.Picasso
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
+
+
 
 class UpdateProfileActivity : AppCompatActivity() {
 
@@ -111,8 +109,11 @@ class UpdateProfileActivity : AppCompatActivity() {
                 val respon = response.body()!!
                 if (respon.code == 200) {
                     sP.setUser(respon.data)
+                    val intent = Intent(this@UpdateProfileActivity, MainActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    finish()
                     Toast.makeText(this@UpdateProfileActivity,"Data berhasil disimpan", Toast.LENGTH_SHORT).show()
-                    onBackPressed()
                 } else {
                     Toast.makeText(this@UpdateProfileActivity,"Error : "+respon.message, Toast.LENGTH_SHORT).show()
                 }

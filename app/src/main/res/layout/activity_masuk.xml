@@ -19,7 +19,7 @@
             android:textSize="@dimen/_14ssp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mari bergabung bersama kami"/>
+            android:text="Expose Your Art With Us!"/>
 
         <TextView
             android:textColor="@color/colorPrimary"

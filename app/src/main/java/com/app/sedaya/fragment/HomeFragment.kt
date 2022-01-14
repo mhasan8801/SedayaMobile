@@ -73,14 +73,13 @@ class HomeFragment : Fragment() {
             }
         }
 
-//        sP = SharedPref(requireActivity())
-//        val user = sP.getUser()!!
-//        tvWelcome = view.findViewById(R.id.tv_welcome)
-//        tvNama = view.findViewById(R.id.tv_nama)
-//        if (sP.getStatusLogin()) {
-//            tvWelcome.setText("Selamat Datang ")
-//            tvNama.setText(user.nama)
-//        }
+        sP = SharedPref(requireActivity())
+        val user = sP.getUser()!!
+        tvWelcome = view.findViewById(R.id.tv_welcome)
+        tvNama = view.findViewById(R.id.tv_nama)
+        if (sP.getStatusLogin()) {
+            tvWelcome.setText("Hai, "+user.nama)
+        }
 
 
         init(view)
