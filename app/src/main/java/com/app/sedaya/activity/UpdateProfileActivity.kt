@@ -16,6 +16,7 @@ import com.app.sedaya.databinding.ActivityUpdateProfileBinding
 import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.ResponModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.squareup.picasso.Picasso
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -58,19 +59,15 @@ class UpdateProfileActivity : AppCompatActivity() {
     }
     private fun setData() {
         val user = sP.getUser()!!
-        ApiConfig.instanceRetrofit.detailUser(user.usr_id).enqueue(object : Callback<ResponModel> {
-            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
-            }
-            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-                val res = response.body()!!
-                if (res.code == 200) {
-                    binding.edtNama.setText(res.data.nama)
-                    binding.edtTelp.setText(res.data.telp)
-                    binding.edtAlamat.setText(res.data.alamat)
-                    binding.tvInisial.text = res.data.nama.getInitial()
-                }
-            }
-        })
+                    binding.edtNama.setText(user.nama)
+                    binding.edtTelp.setText(user.telp)
+                    binding.edtAlamat.setText(user.alamat)
+                    binding.tvInisial.text = user.nama.getInitial()
+                    val foto = "http://ws-tif.com/sedaya/admin/public/img/user/"+user.foto
+                    Picasso.get()
+                        .load(foto)
+                        .into(binding.imageProfile)
+
     }
 
     private fun mainButton(){
@@ -113,12 +110,13 @@ class UpdateProfileActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                 val respon = response.body()!!
                 if (respon.code == 200) {
-                    sP.setStatusLogin(true)
+                    sP.setUser(respon.data)
                     val intent = Intent(this@UpdateProfileActivity, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                     finish()
-                    Toast.makeText(this@UpdateProfileActivity,"Selamat datang "+respon.data.nama, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@UpdateProfileActivity,"Data berhasil disimpan", Toast.LENGTH_SHORT).show()
+                    onBackPressed()
                 } else {
                     Toast.makeText(this@UpdateProfileActivity,"Error : "+respon.message, Toast.LENGTH_SHORT).show()
                 }

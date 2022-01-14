@@ -7,5 +7,6 @@ class User {
     lateinit var email:String
     lateinit var telp:String
     lateinit var alamat:String
+    var foto = "null"
 
 }

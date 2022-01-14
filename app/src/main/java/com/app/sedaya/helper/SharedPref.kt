@@ -13,6 +13,7 @@ class SharedPref(activity: Activity) {
     val email = "email"
     val telp = "telp"
     val alamat = "alamat"
+    val foto = "foto"
     val user = "user"
     val mypref = "MY_PREF"
     val sp:SharedPreferences

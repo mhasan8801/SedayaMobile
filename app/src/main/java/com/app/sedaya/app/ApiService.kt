@@ -2,10 +2,7 @@ package com.app.sedaya.app
 
 import com.app.sedaya.model.ResponModel
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -27,7 +24,7 @@ interface ApiService {
     ):Call<ResponModel>
 
     @FormUrlEncoded
-    @POST("update-profile.php")
+    @PUT("update-profile.php")
     fun updateProfile(
         @Field("usr_id") usr_id : Int,
         @Field("nama") nama :String,

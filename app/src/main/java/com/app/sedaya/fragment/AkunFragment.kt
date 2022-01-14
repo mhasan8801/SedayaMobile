@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -22,6 +23,7 @@ import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.ResponModel
 import com.app.sedaya.model.Seni
 import com.google.gson.Gson
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers.Main
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,6 +38,7 @@ class AkunFragment : Fragment() {
     lateinit var tvNama:TextView
     lateinit var tvEmail:TextView
     lateinit var tvTelp:TextView
+    lateinit var imgProfile:ImageView
     lateinit var tvAlamat:TextView
     lateinit var swipeRefresh : SwipeRefreshLayout
     lateinit var tvInisial:TextView
@@ -91,23 +94,20 @@ class AkunFragment : Fragment() {
             startActivity(intent)
             return
         }
-        ApiConfig.instanceRetrofit.detailUser(user.usr_id).enqueue(object : Callback<ResponModel> {
-            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
-            }
-            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-                val res = response.body()!!
-                if (res.code == 200) {
-                    tvNama.text = res.data.nama
-                    tvEmail.text = res.data.email
-                    tvTelp.text = res.data.telp
-                    tvAlamat.text = res.data.alamat
-                    tvInisial.text = res.data.nama.getInitial()
-                }
-            }
-        })
+        tvNama.text = user.nama
+        tvEmail.text = user.email
+        tvTelp.text = user.telp
+        tvAlamat.text = user.alamat
+        tvInisial.text = user.nama.getInitial()
+
+        val foto = "http://ws-tif.com/sedaya/admin/public/img/user/"+user.foto
+        Picasso.get()
+            .load(foto)
+            .into(imgProfile)
     }
 
     private fun init(view: View) {
+        imgProfile = view.findViewById(R.id.image_profile)
         btnLogout = view.findViewById(R.id.btn_logout)
         swipeRefresh = view.findViewById(R.id.swipeRefresh)
         btnUpdate = view.findViewById(R.id.btn_update)

@@ -27,7 +27,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="@dimen/_80sdp"
         android:layout_height="@dimen/_80sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_25sdp"
         android:layout_gravity="center_horizontal"
         app:cardCornerRadius="@dimen/_40sdp">
 
@@ -41,7 +41,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="MH"
+                android:text="NL"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_35sdp"
                 android:textStyle="bold" />
