@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/_18sdp"
-                        android:text="Sedaya | Explore Your Art With Us!"
+                        android:text="Sedaya | Expose Your Art With Us!"
                         android:textSize="@dimen/_9ssp"
                         android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/colorPrimary_800"
