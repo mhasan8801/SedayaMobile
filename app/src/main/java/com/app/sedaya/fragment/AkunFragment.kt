@@ -15,12 +15,17 @@ import com.app.sedaya.R
 import com.app.sedaya.activity.DetailSeniActivity
 import com.app.sedaya.activity.LoginActivity
 import com.app.sedaya.activity.UpdateProfileActivity
+import com.app.sedaya.app.ApiConfig
 import com.app.sedaya.databinding.ActivityLoginBinding
 import com.app.sedaya.databinding.FragmentAkunBinding
 import com.app.sedaya.helper.SharedPref
+import com.app.sedaya.model.ResponModel
 import com.app.sedaya.model.Seni
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers.Main
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class AkunFragment : Fragment() {
@@ -79,18 +84,27 @@ class AkunFragment : Fragment() {
     }
 
     fun setData() {
+        val user = sP.getUser()!!
         if (sP.getUser() == null) {
             val intent = Intent(activity, LoginActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             return
         }
-        val user = sP.getUser()!!
-        tvNama.text = user.nama
-        tvEmail.text = user.email
-        tvTelp.text = user.telp
-        tvAlamat.text = user.alamat
-        tvInisial.text = user.nama.getInitial()
+        ApiConfig.instanceRetrofit.detailUser(user.usr_id).enqueue(object : Callback<ResponModel> {
+            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+            }
+            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+                val res = response.body()!!
+                if (res.code == 200) {
+                    tvNama.text = res.data.nama
+                    tvEmail.text = res.data.email
+                    tvTelp.text = res.data.telp
+                    tvAlamat.text = res.data.alamat
+                    tvInisial.text = res.data.nama.getInitial()
+                }
+            }
+        })
     }
 
     private fun init(view: View) {

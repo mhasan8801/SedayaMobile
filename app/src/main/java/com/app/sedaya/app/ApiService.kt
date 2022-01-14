@@ -42,6 +42,12 @@ interface ApiService {
     ):Call<ResponModel>
 
     @FormUrlEncoded
+    @POST("detail-user.php")
+    fun detailUser(
+        @Field("usr_id") usr_id : Int,
+    ):Call<ResponModel>
+
+    @FormUrlEncoded
     @POST("pembayaran.php")
     fun pembayaran(
         @Field("no_transaksi") no_transaksi : Int
