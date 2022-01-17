@@ -25,7 +25,7 @@ import java.util.*
 
 class DetailSeniActivity : AppCompatActivity() {
 
-    var formatDate = SimpleDateFormat("dd MMMM YYYY", Locale.US)
+    var formatDate = SimpleDateFormat("YYYY-MM-dd", Locale.US)
 
     private var _binding: ActivityDetailSeniBinding? = null
     private val binding get() = _binding!!

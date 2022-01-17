@@ -13,6 +13,8 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.app.sedaya.R
+import com.app.sedaya.activity.DetailSeniActivity
+import com.app.sedaya.activity.DetailTransaksiActivity
 import com.app.sedaya.activity.LoginActivity
 import com.app.sedaya.app.ApiConfig
 import com.app.sedaya.activity.RiwayatActivity
@@ -22,6 +24,8 @@ import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.History
 import com.app.sedaya.model.ResponModel
 import com.app.sedaya.helper.Helper
+import com.app.sedaya.model.Seni
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import kotlin.collections.ArrayList
 import retrofit2.Call
@@ -40,8 +44,7 @@ class AdapterRiwayat(var activity: Activity, var data: ArrayList<History>) : Rec
         val tvHarga = view.findViewById<TextView>(R.id.tv_harganilai)
         val tvTransport = view.findViewById<TextView>(R.id.tv_transportnilai)
         val tvTotal = view.findViewById<TextView>(R.id.tv_totalnilai)
-        val btnBatal = view.findViewById<Button>(R.id.btn_batal)
-        val btnBayar = view.findViewById<Button>(R.id.btn_bayar)
+        val btnDetail = view.findViewById<Button>(R.id.btn_detail)
         val btnSelesai = view.findViewById<Button>(R.id.btn_selesai)
 
     }
@@ -67,21 +70,7 @@ class AdapterRiwayat(var activity: Activity, var data: ArrayList<History>) : Rec
 
         riwayat = RiwayatActivity()
         holder.tvJudul.text = data[position].judul
-        if (data[position].t_status=="0"){
-            holder.btnBayar.visibility = View.GONE
-            holder.btnSelesai.visibility = View.GONE
-        }else if (data[position].t_status=="1"){
-            holder.btnSelesai.visibility = View.GONE
-        }else if (data[position].t_status=="2"){
-            holder.btnBayar.visibility = View.GONE
-            holder.btnBatal.visibility = View.GONE
-        }else if (data[position].t_status=="3"){
-            holder.btnBatal.visibility = View.GONE
-            holder.btnBayar.visibility = View.GONE
-            holder.btnSelesai.visibility = View.GONE
-        }else if (data[position].t_status=="4"){
-            holder.btnBatal.visibility = View.GONE
-            holder.btnBayar.visibility = View.GONE
+        if (data[position].t_status!="2"){
             holder.btnSelesai.visibility = View.GONE
         }
         holder.tvStatus.text = data[position].k_status
@@ -96,46 +85,13 @@ class AdapterRiwayat(var activity: Activity, var data: ArrayList<History>) : Rec
             .error(R.drawable.loadingseni)
             .into(holder.imgProduk)
         //button bayar
-        holder.btnBayar.setOnClickListener(){
-            ApiConfig.instanceRetrofit.pembayaran(
-                data[position].no_transaksi
-            )
-                .enqueue(object : Callback<ResponModel>{
-                    override fun onFailure(call: Call<ResponModel>, t: Throwable) {
-                        //handle ketika gagal
-//                        Toast.makeText(this@AdapterRiwayat,"Error : "+t.message, Toast.LENGTH_SHORT).show()
-                    }
+        holder.btnDetail.setOnClickListener(){
 
-                    override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-                        val respon = response.body()!!
-                        if (respon.code == 200) {
-                            holder.btnBayar.visibility = View.GONE
-                            holder.tvStatus.text = "Dalam proses"
-                        } else {
-                        }
-                    }
-                })
-        }
-        //button batal
-        holder.btnBatal.setOnClickListener(){
-            ApiConfig.instanceRetrofit.batal(
-                data[position].no_transaksi
-            )
-                .enqueue(object : Callback<ResponModel>{
-                    override fun onFailure(call: Call<ResponModel>, t: Throwable) {
-                        //handle ketika gagal
-//                        Toast.makeText(this@AdapterRiwayat,"Error : "+t.message, Toast.LENGTH_SHORT).show()
-                    }
+            val activiti = Intent(activity, DetailTransaksiActivity::class.java)
 
-                    override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-                        val respon = response.body()!!
-                        if (respon.code == 200) {
-                            holder.btnBatal.visibility = View.GONE
-                            holder.tvStatus.text = "Batal"
-                        } else {
-                        }
-                    }
-                })
+            val string = Gson().toJson(data[position], History::class.java)
+            activiti.putExtra("extra", string)
+            activity.startActivity(activiti)
         }
         //button Selesai
         holder.btnSelesai.setOnClickListener(){
