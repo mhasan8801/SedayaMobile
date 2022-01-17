@@ -36,6 +36,7 @@
         <activity android:name=".activity.DetailSeniActivity" />
         <activity android:name=".activity.KeranjangActivity" />
         <activity android:name=".activity.RiwayatActivity" />
+        <activity android:name=".activity.DetailTransaksiActivity" />
     </application>
 
 </manifest>

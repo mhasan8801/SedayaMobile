@@ -1,7 +1,9 @@
 package com.app.sedaya.activity
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.sedaya.MainActivity
@@ -18,8 +20,12 @@ import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DetailSeniActivity : AppCompatActivity() {
+
+    var formatDate = SimpleDateFormat("dd MMMM YYYY", Locale.US)
 
     private var _binding: ActivityDetailSeniBinding? = null
     private val binding get() = _binding!!
@@ -39,6 +45,22 @@ class DetailSeniActivity : AppCompatActivity() {
         binding.btnPesan.setOnClickListener{
             transaksi()
         }
+
+        binding.getDate.setOnClickListener(View.OnClickListener {
+            val getDate = Calendar.getInstance()
+            val datepicker = DatePickerDialog(this,android.R.style.Theme_Holo_Light_Dialog_MinWidth, DatePickerDialog.OnDateSetListener { datePicker, i, i2, i3 ->
+
+                val selectDate = Calendar.getInstance()
+                selectDate.set(Calendar.YEAR,i)
+                selectDate.set(Calendar.MONTH,i2)
+                selectDate.set(Calendar.DAY_OF_MONTH,i3)
+                val date = formatDate.format(selectDate.time)
+                Toast.makeText(this, "Pesanan tanggal : "+ date, Toast.LENGTH_SHORT).show()
+                binding.edtTanggal.text = date
+
+            }, getDate.get(Calendar.YEAR), getDate.get(Calendar.MONTH), getDate.get(Calendar.DAY_OF_MONTH))
+            datepicker.show()
+        })
     }
 
     fun transaksi() {

@@ -10,10 +10,14 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.app.sedaya.R
+import com.app.sedaya.activity.LoginActivity
 import com.app.sedaya.app.ApiConfig
 import com.app.sedaya.activity.RiwayatActivity
+import com.app.sedaya.databinding.ActivityMasukBinding
+import com.app.sedaya.databinding.ActivityRiwayatBinding
 import com.app.sedaya.helper.SharedPref
 import com.app.sedaya.model.History
 import com.app.sedaya.model.ResponModel
@@ -25,6 +29,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class AdapterRiwayat(var activity: Activity, var data: ArrayList<History>) : RecyclerView.Adapter<AdapterRiwayat.Holder>() {
+
 
     lateinit var sP: SharedPref
     lateinit var riwayat: RiwayatActivity
@@ -43,6 +48,9 @@ class AdapterRiwayat(var activity: Activity, var data: ArrayList<History>) : Rec
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_riwayat, parent, false)
+
+
+
         mainButton()
         return Holder(view)
     }

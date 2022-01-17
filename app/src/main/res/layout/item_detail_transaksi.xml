@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/isikeranjang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/black"
+                    android:text="Status Transaksi "/>
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/colorPrimary_700"
+                    android:text="MENUNGGU PEMBAYARAN"
+                    android:textAlignment="textEnd"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView"
+                    android:layout_width="@dimen/_299sdp"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_margin="@dimen/_1sdp"
+                    android:background="#585858" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/black"
+                    android:text="Tanggal Pesanan "/>
+
+                <TextView
+                    android:id="@+id/tv_tglpesan"
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/black"
+                    android:text="30 Februari 2022"
+                    android:textAlignment="textEnd"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/black"
+                    android:text="Dipesan Tanggal "/>
+
+                <TextView
+                    android:id="@+id/tv_tgldipesan"
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/black"
+                    android:text="10 Februari 2022"
+                    android:textAlignment="textEnd"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/black"
+                    android:text="Alamat Pemesan"/>
+
+                <TextView
+                    android:id="@+id/tv_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Dusun Ky Hasan RT.09/RW.05 Desa Kerpangan Kecamatan Leces Kabupaten Probolinggo Provinsi Jawa Timur Indonesia Kode pos 67273"
+                    android:layout_margin="@dimen/_2sdp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

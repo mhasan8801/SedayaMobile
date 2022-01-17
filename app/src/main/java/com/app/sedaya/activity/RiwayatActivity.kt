@@ -31,8 +31,6 @@ class RiwayatActivity : AppCompatActivity() {
     private var _binding: ActivityRiwayatBinding? = null
     private val binding get() = _binding!!
 
-
-
     lateinit var sP: SharedPref
     lateinit var rvHistory: RecyclerView
     lateinit var swipeRefresh: SwipeRefreshLayout
@@ -45,6 +43,7 @@ class RiwayatActivity : AppCompatActivity() {
         supportActionBar!!.title = "Riwayat Pesanan"
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
 
         sP = SharedPref(this)
         rvHistory = findViewById(R.id.rv_riwayat)

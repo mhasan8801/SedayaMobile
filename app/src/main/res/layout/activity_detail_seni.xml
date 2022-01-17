@@ -285,6 +285,7 @@
                 android:background="@drawable/bg_btn_beli">
 
                 <ImageView
+                    android:id="@+id/get_date"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:padding="@dimen/_10sdp"
@@ -305,7 +306,7 @@
                     android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:gravity="center"
-                    android:hint="yyyy-mm-dd"
+                    android:hint="Pilih tanggal"
                     android:paddingLeft="@dimen/_5sdp"
                     android:paddingRight="@dimen/_5sdp"
                     android:textColor="@color/black"
