@@ -90,7 +90,7 @@ class DetailTransaksiActivity : AppCompatActivity() {
                     .enqueue(object : Callback<ResponModel> {
                         override fun onFailure(call: Call<ResponModel>, t: Throwable) {
                             //handle ketika gagal
-                            //                        Toast.makeText(this@AdapterRiwayat,"Error : "+t.message, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@DetailTransaksiActivity,"Error : "+t.message, Toast.LENGTH_SHORT).show()
                         }
 
                         override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
@@ -118,7 +118,7 @@ class DetailTransaksiActivity : AppCompatActivity() {
         binding.tvHarga.text = Helper().gantiRp(history.harga)
         binding.tvJudul.text = history.judul
         binding.tvTransport.text = Helper().gantiRp(history.transport)
-        binding.tvKategori.text = history.kategori
+        binding.tvKategori.text ="Kategori : "+history.kategori
         binding.tvTotal.text = Helper().gantiRp(history.ttl_harga)
 
         val gambar = "http://ws-tif.com/sedaya/admin/public/img/seni/"+history.gambar

@@ -55,8 +55,8 @@ class DetailSeniActivity : AppCompatActivity() {
                 selectDate.set(Calendar.MONTH,i2)
                 selectDate.set(Calendar.DAY_OF_MONTH,i3)
                 val date = formatDate.format(selectDate.time)
-                Toast.makeText(this, "Pesanan tanggal : "+ date, Toast.LENGTH_SHORT).show()
-                binding.edtTanggal.text = date
+
+                    binding.edtTanggal.text = date
 
             }, getDate.get(Calendar.YEAR), getDate.get(Calendar.MONTH), getDate.get(Calendar.DAY_OF_MONTH))
             datepicker.show()
