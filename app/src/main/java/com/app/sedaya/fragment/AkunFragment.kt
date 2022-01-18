@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.app.sedaya.DialogUbahPw
 import com.app.sedaya.MainActivity
 import com.app.sedaya.R
 import com.app.sedaya.activity.DetailSeniActivity
@@ -42,6 +43,7 @@ class AkunFragment : Fragment() {
     lateinit var tvAlamat:TextView
     lateinit var swipeRefresh : SwipeRefreshLayout
     lateinit var tvInisial:TextView
+    lateinit var tvUbahPw:TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,6 +75,12 @@ class AkunFragment : Fragment() {
         }
         btnUpdate.setOnClickListener {
             startActivity(Intent(requireContext(), UpdateProfileActivity::class.java))
+        }
+        tvUbahPw.setOnClickListener {
+            var dialog = DialogUbahPw()
+
+            var supportFragmentManager = null
+            dialog.show(supportFragmentManager, "customDialog")
         }
 
     }
@@ -116,5 +124,6 @@ class AkunFragment : Fragment() {
         tvTelp = view.findViewById(R.id.tv_phone)
         tvAlamat = view.findViewById(R.id.tv_alamat)
         tvInisial = view.findViewById(R.id.tv_inisial)
+        tvUbahPw = view.findViewById(R.id.txt_UbahPw)
     }
 }

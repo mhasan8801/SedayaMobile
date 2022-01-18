@@ -38,6 +38,7 @@
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_detail_seni.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_detail_transaksi.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_lupa_password.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_main2.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/activity_masuk.xml" value="0.25" />
@@ -65,7 +66,9 @@
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/item_slider.xml" value="0.21" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/layout_home_member.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/layout_home_toolbar.xml" value="0.25" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/lupa_pw_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/toolbar_custom.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/layout/ubah_pw_dialog.xml" value="0.25" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21" />
         <entry key="..\:/Users/Hasan/AndroidStudioProjects/sedaya/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2169230769230769" />
       </map>

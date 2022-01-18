@@ -257,25 +257,11 @@
         <LinearLayout
             android:id="@+id/div_footer"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_height="@dimen/_45sdp"
             android:layout_alignParentBottom="true"
             android:orientation="horizontal"
             android:paddingHorizontal="15dp"
             android:paddingVertical="7dp">
-
-            <!--            <RelativeLayout-->
-            <!--                android:id="@+id/btn_favorit"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:background="@drawable/bg_btn_keranjang">-->
-
-            <!--                <ImageView-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_margin="8dp"-->
-            <!--                    app:srcCompat="@drawable/ic_baseline_favorite_border_24" />-->
-
-            <!--            </RelativeLayout>-->
 
             <RelativeLayout
                 android:id="@+id/btn_tanggal"

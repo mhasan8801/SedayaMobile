@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.app.sedaya.DialogLupaPw
 import com.app.sedaya.MainActivity
 import com.app.sedaya.app.ApiConfig
 import com.app.sedaya.databinding.ActivityLoginBinding
@@ -36,6 +37,11 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnDaftar.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+        }
+        binding.tvLupaPw.setOnClickListener {
+            var dialog = DialogLupaPw()
+
+            dialog.show(supportFragmentManager, "dialogCustom")
         }
 
     }
